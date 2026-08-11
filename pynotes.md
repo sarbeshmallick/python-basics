@@ -4,3 +4,14 @@ Part 2-
 10. Sum program 
 11. String methods 
 12. Keywrods 
+
+
+
+Part 3-
+ Arithmetic operators
+ Comparison operators 
+ Logical Operators 
+ Condition (if/else)
+
+
+

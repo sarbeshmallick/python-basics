@@ -13,6 +13,9 @@
 - [7. 2nd Exercise](#7-Second-Exercise)
 - [8. String Operations](#8-string-operations)
 - [9. 3rd Exercise](#9-Third-Exercise)
+- [10. Operators](#10-Operator)
+- [11. Condition if/else statements](#11-Conditional-statements) 
+- 
 
 
 
@@ -890,6 +893,318 @@ name.replace()
 
 
 # 9-Third Exercise
+
+Problem stat-
+<!-- # Problem stat- 
+# Take price of 3 products as input (eg - 99.5, 23.75, 16.15)
+# print the total Bill amount
+# print the average price
+# Take a superhero name as input & check if it starts with 'S' / 's' or not. -->
+
+
+```
+first_product = 101.55
+second_product = 99.95
+third_product = 15.15 
+
+
+total = int(first_product) + int(second_product) + int(third_product)
+
+print(total)
+
+print ("the average price is: " , total/3)
+
+name = input("What's your supehero name: ")
+
+print (name.startswith('s') or name.startswith('S'))                            // Alt-    print(name.startswith(('s', 'S')))     OR       print(name.lower().startswith('s'))
+
+```
+
+
+> Output-
+215
+the average price is:  71.66666666666667
+What's your supehero name: Sarbesh
+True
+
+
+- if I want to check if S or s in the whole name is there or not then:
+            print ('S' in name or 's' in name)
+
+
+
+
+
+
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+
+
+
+
+
+# 10-Operator 
+
+
+## Arithmetic Operator 
+1. **Arithmetic Operators-** 
+
+
+
+| Operator | Name                   | Example  |
+| -------- | ---------------------- | -------- |
+| +        | Addition               | 5 + 2    |
+| -        | Subtraction            | 5 - 2    |
+| *        | Multiplication         | 5 * 2    |
+| /        | Division               | 5 / 2    |
+| //       | Floor Division         | 5 // 2   |
+| %        | Modulus / Remainder    | 5 % 2    |
+| **       | Exponentiation / Power | 5 ** 2   |
+
+
+
+print (5 + 3)                                   //  + is addition operator and 5,3 are operands 
+print (5 - 3)
+print (5 * 3)
+print (5 / 3)                                   //   / is division operator 
+
+print (5 // 3)                                 //    is floor division and completely removes the decimal part, only int part is left 
+
+print (5 % 3)                                  //   % is modulus or remainder , very helpful to check even & odd
+
+print (5 ** 3)                                 //   ** is exponent of or power of 5³   = 5*5*5 = 125 
+
+
+
+1. 5/2        -> 2.5
+2. 5 // 2     -> 2
+
+    Very useful for checking even/odd:
+    number % 2 == 0       → even
+    number % 2 != 0       → odd
+
+3. 5 ** 2    -> 25  (5² = 25)
+
+
+
+
+--------------------------------------------------------------
+
+
+
+
+
+### Operator Precedence
+
+- Python follows operator precedence rules when multiple operators appear in an expression.
+- just like in real life BODMAS is followed 
+- operator precedence are rules that defines which operator has higher priority compared to other 
+
+
+
+> For example:
+
+2 + 5 * 3  
+ = 17
+Multiplication happens first
+
+
+**But parentheses have higher priority:**
+(2 + 5) * 3
+Result: 21
+
+
+
+**Basic rule to remember**
+1. ()
+2. **
+3. * / // %
+4. + -
+
+
+- **For operators with the same precedence, evaluation generally proceeds from left to right.**
+
+- **When in doubt, use parentheses to make the intended order clear.**
+
+- if * and / both are present then our operations will start from Left -> Right 
+
+- parantheses() have highest priority. 
+
+
+
+
+
+-------------------------------------------------------------
+
+
+
+
+## Operator comparison 
+2. Operator Comparison 
+
+
+
+Comparison operators compare values and produce a Boolean result: TRUE or FALSE 
+
+
+| Operator | Meaning                  |
+| -------- | ------------------------ |
+| >        | Greater than             |
+| <        | Less than                |
+| >=       | Greater than or equal to |
+| <=       | Less than or equal to    |
+| ==       | Equal to                 |
+| !=       | Not equal to             |
+
+
+
+> Examples:
+
+3 > 2
+True
+
+2 < 5
+True
+
+2 == 5
+False
+
+2 != 5                                // !=  is NOT operator 
+True
+
+
+
+
+### Remember-
+
+= vs ==
+
+= is the assignment operator:
+age = 25
+It assigns a value.
+
+
+== is the comparison operator:
+age == 25
+It checks whether the values are equal.
+
+
+= → assign
+== → compare
+
+This distinction is extremely important in if statements.
+
+
+
+
+------------------------------------------------------
+
+
+
+
+
+## Logical Operator 
+3. Logical Operator 
+
+
+- Python has three main logical operators:
+and
+or
+not
+
+
+
+1. and
+Both conditions must be true.
+(3 < 5) and (3 < 12)
+→ True
+
+
+> Conceptually:
+True AND True → True
+True AND False → False
+False AND True → False
+False AND False → False
+
+
+
+2. or 
+At least one condition must be true.
+(3 > 5) or (3 > 2)
+→ True
+
+
+> Conceptually:
+True OR True → True
+True OR False → True
+False OR True → True
+False OR False → False
+
+
+
+3. not 
+Reverses a Boolean value.
+
+not True
+→ False
+
+not False
+→ True
+
+
+
+- these operators work in statement or expression . for eg-   () or () 
+  
+or -> (atleast one statement is true)
+and -> (both are true)
+not -> (reverses any value)
+
+
+> example
+
+stt1 = 3 > 5                                      //  False
+stt2 = 3 > 2                                     // True 
+
+print (stt1 or stt2)                             // Ans True (cuz one statement stt2 is True )
+
+print ((3 > 5) or (3 > 2))                      // we can write directly also 
+
+
+
+print ((3 < 5) and  (3 < 12))                   // Ans True (both the statements are true )
+
+
+
+# not operator always does the reverse 
+
+print (not(3 > 2))                             //  Ans False , although it is true but as it is not so False 
+
+print (not True)                               // Ans False 
+
+
+
+
+
+
+
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+
+
+
+
+
+
+
+# 11-Conditional-statements 
+
+
+
+
 
 
 

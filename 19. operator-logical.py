@@ -1,7 +1,7 @@
 
 # Logical operators 
 
-# these operators work in statement or expression . for eg-   () or ()
+# these operators work in statement or expression . for eg-   () or ()    
 
 
 # or -> (atleast one statement is true)

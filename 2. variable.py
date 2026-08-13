@@ -6,6 +6,7 @@ last_name = "Mallick"
 age = 26 
 gender = "male"
 eye = "brown"
+age = 100
 
 
 print(first_name)
@@ -24,6 +25,6 @@ print(30)
 
 # Output- 
 # Sarbesh
-# 26
+# 100
 # male brown 
 # 30

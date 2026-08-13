@@ -12,3 +12,5 @@ print("printing" , "two lines together")
 # in terminal to use the previous command just tap upward arrow key (↑) and it will copy it 
 
 # python is case sensitive meaning if we need to print something & instead of print() we type Print() it will not work 
+
+

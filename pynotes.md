@@ -8,10 +8,11 @@
 - [2. Variables](#2-variables)
 - [3. Data Types](#3-data-types)
 - [4. Input](#4-input)
-- [5. Operators](#5-operators)
-- [6. if/else](#6-ifelse)
-- [7. Practice Exercises](#7-practice-exercises)
-- [8. Mini Projects](#8-mini-projects)
+- [5. 1st Exercise](#5-First-Exercise)
+- [6. Type Casting/Conversion](#6-Type-Casting-or-Type-Conversion)
+- [7. 2nd Exercise](#7-Second-Exercise)
+- [8. String Operations](#8-string-operations)
+- [9. 3rd Exercise](#9-Third-Exercise)
 
 
 
@@ -195,6 +196,716 @@ print (type(balance))
 
 
 # 4-input 
+
+
+**Use input() to take input from the user.**
+
+
+name = input("Enter your name: ") 
+print(name)
+
+
+
+### Eg code-
+```
+name = input("What is ur name: ")
+profession = input(" what is ur job: ")
+age = input("what is ur age: ")
+
+print(name)
+print(profession)
+print(age)
+```
+
+> Input
+What is ur name: Sarbesh
+what is ur job: Dev
+what is ur age: 16
+
+>Output 
+Sarbesh
+Dev
+16
+
+
+
+### 6. Input code- 
+```
+name = input("Enter your name: ")
+
+print("Namaste" , name)
+```
+
+> Input
+Enter your name: Sarbesh
+
+>Output- 
+Hello Namaste Sarbesh
+
+
+
+### Tip- 
+
+suppose my python filename is 6. Input.py 
+
+- if we run this program using python filename.py then remember as I have used spaces to use " "  in terminal 
+- like for example-
+    python "6. Input.py"
+
+
+
+### Important- 
+
+input() always returns a string.
+
+Even if the user enters: 23
+Python initially stores it as:  "23"   
+not: 23
+
+input returns a string even it is a number(int) 
+
+
+
+--------------------------------------------------------
+
+
+
+## Concatenation
+
+concatenation means joining strings.
+
++ 
+
+
+> for eg:
+
+name = "Sarbesh"
+print("Hello " + name)
+
+>Output-
+Hello Sarbesh 
+
+
+> Remember
+Be careful about spaces:
+
+"Hello" + name 
+produces:
+HelloSarbesh
+
+
+"Hello " + name
+produces:
+Hello Sarbesh
+
+
+- The + operator can concatenate strings.
+
+
+
+
+### 7. concatenation code-
+```
+name = input("Enter your name: ")
+
+print("Hello Namaste " + name)
+```
+
+> Input
+Enter your name: Sarbesh
+
+> Output-
+Hello Namaste Sarbesh
+
+
+
+
+
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+
+
+
+
+# 5-First-Exercise 
+
+
+Problem stat-
+<!-- # Add a person with first name as Tony and last name as Stark.
+# Tony's age is 53.
+# Tony's height is 1.85m.
+# Tony is secretly a superhero. Take his superhero name as input & print it. --> 
+
+
+```
+first_name = "Tony"
+last_name = "Stark"
+
+age = 53
+height = 1.85 
+
+name = input("What is his superhero name: ")
+print(name)
+```
+
+> Input 
+What is his superhero name: Ironman
+
+>Output 
+Ironman 
+
+
+
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+
+
+
+
+# 6-Type-Casting-or-Type-Conversion
+
+
+Because input() returns a string, we often need to convert it before performing calculations.
+
+type casting     ->  when coders changes 
+type conversion  ->  python interpreter automatically does it 
+
+
+> Common conversion functions:
+int()
+float()
+str()
+bool()
+
+
+### type casting code- 
+```
+age = input("Enter your age: ")
+
+print (type(age))
+
+print (age)
+```
+
+> Input
+Enter your age: 23
+
+> Output
+<class 'str'>
+23
+
+
+> Note-
+-  print (age + 1) ❌                                                                       // we cannot do this as age varibale value i.e 23 is passed as string 
+-  see the age varibale is passed as string and not integer although 23 is an integer 
+-  if we have to do print (age + 1)  we cannot do that 
+-  it will show TypeError: can only concatenate str (not "int") to str
+
+
+
+### Solution for this 
+
+```
+age = input("Enter your age: ")
+
+age = int(age)
+
+print (type(age))
+
+print (age)
+print (age + 1)
+```
+
+> Input- Enter your age: 23
+
+> Output
+<class 'int'>
+23
+24
+
+
+- Now age is an integer 
+
+
+
+
+---------------------------------------------------
+
+
+
+
+## Temporary Conversion vs Reassignment 
+
+
+Let's understand this with code-
+
+```
+old_age = input("Enter ur age: ")
+
+new_age = int(old_age) + 2
+
+print(new_age)
+
+print (float(new_age))                              # here we converted int to float. It is not conversion but Reassignment 
+
+print (type(new_age))
+```
+
+
+> Input- 
+Enter ur age: 23
+
+> Output- 
+25
+25.0
+<class 'int'>
+
+
+> Note-
+- if u wondering after converting from int to float why class is int and not float because its a temporaray expression 
+- new_age = float(new_age)            // to convert it permanently 
+
+
+type casting     ->  when coders changes 
+type conversion  ->  python interpreter automatically does it 
+
+
+Conversion examples-
+print (1 + 1.5)                // python converts 1 into 1.0 and will give you answer in float (decimal)
+
+
+
+
+### Temporary Conversion-
+
+age = 23
+
+print(float(age))
+print(type(age))
+
+> Output:
+23.0
+<class 'str'>
+
+- float(age) converted the value for that expression, but age itself remained a string.
+
+
+
+### Permanent conversion / reassignment- 
+
+age = 23
+
+age = float(age) 
+
+print(age)
+print(type(age))
+
+
+> Output
+23
+<class 'float'>
+
+
+- The converted value was assigned back to age.
+
+
+
+### Easy rule
+
+float(age)
+→ temporary conversion
+- onverts the value for that expression; original variable remains unchanged.
+
+age = float(age)
+→ conversion + reassignment
+- converts the value and stores the converted value back in the variable.
+
+
+You do not always need a new variable.
+
+> For example:
+
+print(float(age) + 1.2)
+
+is perfectly valid when you only need the converted value temporarily.
+
+
+
+
+
+### Another code eg-
+
+```
+age = input("enter age: ")
+
+print(float(age) + 1.2)
+
+print(type(age))
+```
+
+> Input
+enter age: 23
+
+> Output
+24.2
+<class 'str>
+
+
+Temp conversion-
+print(float(age))                // age is still a string 
+ 
+Permanent Conversion- 
+age = float(age)                // age is now float 
+
+
+
+
+
+-------------------------------------------------------------
+
+
+
+
+
+# Explicit vs Implicit Conversion 
+
+
+
+**Implicit Conversion-**
+
+Python automatically performs a compatible conversion.
+
+
+> Example:
+
+print(1 + 1.5)
+
+> Result:
+2.5
+
+- the above code is implicit is automatically converted by python intepreter, 1 (int) is converted into 1.0(float)
+- Python promotes the integer to a float during the operation.
+
+
+
+
+
+**Explicit Conversion / Type Casting-**
+
+The programmer tells Python to convert the type.
+
+
+> example:
+
+print(1 + int(2.9999))
+
+// Python is explicitly told to convert 2.9999 to an integer.
+
+> Result:
+3
+
+
+
+> another example:
+print (1 + int(1.5))            
+
+- this is type casting
+- here in the above code we forced (type casting) 1.5 to become int and it got casted into 1 , so 1 + 1 = 2
+- Result: 2
+
+
+> Summary
+
+print (1 + 2.9999)                             // Type Conversion  (implicit)              // Result: 3.9999
+print (1 + int(2.9999))                        // Type Casting     (explicit)              // Result: 3
+
+
+
+
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+
+
+
+# 7-Second-Exercise 
+
+
+Problem stat- Sum Program where a , b integers nos we hv to take input and calc the sum of a & b and print it
+
+```
+a = input("Enter first number: ")
+
+b = input("Enter second number: ")
+
+total = int(a) + int(b)
+
+print("the sum is" , total)
+```
+
+
+> Input
+Enter first number: 10
+Enter second number: 20
+
+> Output
+the sum is 30 
+
+
+> Alt
+a = int(input("Enter first number: "))                    
+b = int(input("Enter second number: "))
+total = (a + b)
+print(total)
+
+
+
+
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+
+
+
+
+
+# 8-string-operations 
+
+
+- Strings have useful methods 
+- Strings are immutable. 
+- String operations do not modify the original string rather a new string is produced.
+
+
+
+### let's understand from code- 
+
+```
+name = "Sarbesh Mallick "
+
+print (name)
+
+print (name.upper())
+
+print (name.lower())
+
+print (name)                                         //  the original value is intact 
+```
+
+> Output-
+Sarbesh Mallick
+SARBESH MALLICK
+sarbesh mallick 
+Sarbesh mallick                                      //  the original value is intact cuz strings are immutable 
+
+
+
+
+
+--------------------------------------------
+
+
+
+
+## find() method 
+
+
+- find() searches for a substring/character and returns its index/position.
+- returns no of the index and not boolean (true/false)
+
+
+> example:
+
+name = "Sarbesh"
+print(name.find("b"))
+
+> Output:
+3
+
+
+- If the character exists, Python returns its index.
+- If it doesn't exist:
+      name.find("z")
+      
+      returns:
+      -1
+
+
+> Summary:
+find() → tells you where something occurs.
+It does not simply return True or False.
+
+
+
+### Code-
+
+```
+name = "Sarbesh Mallick"
+
+print (name.find('M'))                                               // if that string exists then we will get the index of that thing 
+```
+
+> Output-
+8
+
+> Remember- 
+find function returns index which is position
+if we search something that is not present we will get -1 as value which is invalid 
+
+
+
+
+
+
+## replace() method
+
+
+replace() is a string method, not a standalone function.
+
+
+> for eg:
+
+name = "Sarbesh Mallick"
+print(name.replace("Mallick", "Muthu"))
+
+> Result:
+Sarbesh Muthu
+
+
+- You call it using .
+- variable_name.replace(...)
+- .replace()
+
+
+
+
+### example code-
+
+```
+name = "Sarbesh Mallick"
+
+print (name.replace("Sarbesh Mallick" , "Muthu"))
+print (name.replace("Mallick" , "Muthu"))                           
+print (name.replace("S" , "D"))                                         // when we need to replace smthng partial 
+
+```
+
+> Output-
+Muthu
+Sarbesh Muthu
+Darbesh Mallick
+
+
+
+
+
+
+
+## in operator 
+
+- It is a check method. 
+- it checks whether something exists or not and results comes in boolean (True/False)
+
+
+> for eg 1
+
+name = "Sarbesh"
+print("S" in name)
+
+> Result: 
+True
+
+
+> for eg 2
+numbers = [10, 20, 30]
+print(20 in numbers)
+
+> Result:
+True
+
+
+
+#### not in 
+
+> for eg 3
+
+numbers = [10, 20, 30]
+print(40 not in numbers)
+
+> Result:
+True
+
+
+- in is a keyword in python dictionary, we cannot use in as a varibale name, in operator  job is to search 
+
+
+
+### Note-
+
+'S' in name
+→ checks whether S exists anywhere
+
+**Whereas:**
+
+name.startswith('S')
+→ checks whether the string starts with S.
+
+
+
+### Function vs Method 
+
+Functions are generally called independently:
+
+print()
+input()
+int()
+float()
+
+Methods are called on an object:
+
+name.upper()
+name.lower()
+name.replace()
+
+
+- Functions → generally called independently: print(), input(), int()
+- Methods → called using . on an object: "hello".upper(), "hello".replace()
+
+
+
+
+
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+
+
+
+
+# 9-Third Exercise
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

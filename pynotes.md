@@ -15,6 +15,7 @@
 - [9. 3rd Exercise](#9-Third-Exercise)
 - [10. Operators](#10-Operator)
 - [11. Condition if/else statements](#11-Conditional-statements) 
+- [12. Mini Project Calculator](#12-mini-project-calculator)
 - 
 
 
@@ -1201,6 +1202,174 @@ print (not True)                               // Ans False
 
 
 # 11-Conditional-statements 
+
+
+Conditional statements allow Python to make decisions.
+1. if
+2. elif
+3. else
+
+
+
+
+#### example code1- 
+
+```
+age = 24 
+
+if age >= 18:                                  # in cpp we use {} where if statement is true execute everything inside it. in py it is :
+    print("you are adult")                      # 4 spaces . this is called identation which is proper spacing 
+    print("you can vote")
+
+elif age < 18:                                  # elif is else if . after if everything we can write in elif 
+    print ("you can't vote / drive")
+
+```
+
+>output
+you are an adult
+you can vote 
+
+
+
+
+#### example code 2- 
+
+Problm stat- Marks are given out of 100. Assign a grade based on the marks:
+80–100 → A
+60–80 → B
+60 → C
+write a Python program using if, elif, and else to determine and print the grade.
+
+
+```
+marks = int(input("Enter marks: "))
+
+if marks >= 80:
+    print('A')
+
+elif marks >= 60:
+    print('B')
+
+else:
+    print('C')
+
+```
+
+
+
+
+> If you want to explicitly add into a range then follow this-
+
+if marks >= 60 and marks <= 80:
+    print("B")
+
+- marks should be greater than or equal to 60 AND less than or equal to 80.
+
+
+**Cleaner way-**
+if 60 <= marks <= 80:
+    print("B")
+
+
+
+
+
+#### few more examples combing if/esle with operators
+
+1. 
+age = 25 
+
+if age >= 18 and age <= 60: 
+    print("Eligible")
+
+
+
+2. 
+name = input("Enter name: ") 
+
+if "S" in name or "s" in name: 
+    print("S exists") 
+else: 
+    print("S does not exist")
+
+
+
+This combines:
+in → membership operator
+or → logical operator
+if/else → conditional statement
+
+
+
+
+
+
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+
+
+
+
+
+# 12-mini-project-calculator
+
+Problem stat- 
+<!-- # Build a calculator that can perform the following operations:
+
+# a + b
+# a - b
+# a * b
+# a % b
+# a ** b -->
+
+
+```
+a = float(input("Enter first number: "))
+b = float(input("Enter second number: "))
+
+op = input("Enter operator (+, -, *, /, %, **): ")
+
+
+if op == '+':
+    print("Result:" , a+b)
+
+
+elif op == '-':
+    print("Result:" , a-b)
+
+
+elif op == '*':
+    print("Result:" , a*b)
+
+
+elif op == '/':
+    print("Result:" , a/b)
+
+
+elif op == '%':
+    print("Result:" , a%b)
+
+
+elif op == '**':
+    print("Result:" , a**b )
+
+
+else:
+    print("INVALID OPERATION")
+
+```
+
+
+
+
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+
 
 
 

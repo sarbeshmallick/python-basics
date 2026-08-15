@@ -24,6 +24,7 @@ while counter <= 5:
 print("end of code")
 
 
+
 counter = 1                                        # for counter we give variable name as i 
 while counter <= 5:
     print(counter)

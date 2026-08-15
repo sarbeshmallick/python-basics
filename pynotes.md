@@ -16,6 +16,7 @@
 - [10. Operators](#10-Operator)
 - [11. Condition if/else statements](#11-Conditional-statements) 
 - [12. Mini Project Calculator](#12-mini-project-calculator)
+- [13. loops](#13-loops)
 - 
 
 
@@ -1368,6 +1369,490 @@ else:
 
 --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
+
+
+
+
+
+# 13-loops 
+
+
+
+
+## Range 
+
+- range() function returns a range object that is a sequence of numbers.   starts from 0 
+
+
+
+#### Structure for Range
+
+range(start, stop, step)
+
+range (start=0, stop, step=1)                            // default value if nothing specified. but we have to write a stop value everywhere 
+
+
+
+> Example 1- 
+
+num = range(5)                           
+print(num)                                      // 0,1,2,3,4
+
+
+> Example 2-
+num = range(2, 6)
+print(num)                                    // 2,3,4,5
+
+
+> Example 3-
+
+num = range(10, 0, -2)
+print(num)                                   // 10, 8, 6, 4 , 2
+
+
+
+> we use range in loops like
+for i in range(5):
+    print(i)
+
+
+
+----------------------------------------------------
+
+
+
+
+
+## while loop 
+
+
+> Example 1
+
+counter = 1
+while counter <= 5:
+    print("Sarbesh win")
+    counter = counter + 1
+
+> Output:
+Sarbesh win
+Sarbesh win
+Sarbesh win
+Sarbesh win
+Sarbesh win
+
+
+
+
+> Example 2
+
+counter = 1                                               //  for counter we give variable name as i 
+while counter <= 5:
+    print(counter)
+    counter = counter + 1
+
+
+>Output:
+1
+2
+3
+4
+5
+
+
+
+
+
+> Example 3
+
+i = 0
+
+while i < 5:
+    print(i)
+    i = i + 1
+
+
+> Output:
+0
+1
+2
+3
+4
+
+
+
+
+- if we encounter infinite loop just press Ctrl + C to stop it
+
+
+
+
+> production
+
+- A while loop is useful when you don't necessarily know beforehand how many iterations you'll need.
+  
+```
+password = ""
+
+while password != "python123":
+    password = input("Enter password: ")
+
+```
+
+- Here we don't say: Run this 5 times.
+- Instead: Keep running while the condition is true.
+  
+- for loop -> Iterate over a known sequence/range.
+- while loop -> Continue until some condition changes.
+
+
+
+
+> Danger of while loop
+
+```
+i = 0
+
+while i < 5:
+    print(i)
+
+```
+
+- This never changes i.
+- So
+    i = 0
+    0 < 5 → True
+    print
+    0 < 5 → True
+    print
+    0 < 5 → True
+    print
+
+- That's an infinite loop.
+
+- we normally need state change
+  
+  i = 0
+while i < 5:
+    print(i)
+    i = i + 1
+
+
+
+
+
+--------------------------------------------------------------------
+
+
+
+
+
+## for loop 
+
+
+
+> Example 1
+
+for i in range(5):
+    print(i)
+
+
+> Output:
+0
+1
+2
+3
+4
+
+
+
+
+> Example 2
+
+for i in range(2,6):
+    print(i)
+
+> Output:
+2
+3
+4
+5
+
+
+
+- if its
+   i in range(2,6,2):
+   print(i)                            // 2 4 
+
+- if its 
+    i in range(2,6,5)
+    print(i)                           // 2
+
+
+
+
+> Example 3
+
+for i in range(2, 11, 2):
+      print(i)
+
+> Output:
+2
+4
+6
+8
+10
+
+
+
+
+> Example 4
+
+for i in range(1, 11):                                         // to check even no 
+    if i % 2 == 0:
+        print(i)
+
+> Output:
+2
+4
+6
+8
+10
+  
+
+
+
+#### Concept 
+
+in c++ we use for loops like this
+
+for (int i = 0; i < 5; i++) {
+    cout << i;
+}
+
+
+Python doesn't require you to manually write:
+- initialization
+- condition
+- increment
+
+
+Instead
+for i in range(5):
+
+means   "Take each value produced by range(5) and assign it to i, one at a time."
+
+
+
+> for loop dosen't require range() always 
+
+- Python's for loop can directly iterate over collections.
+
+```
+
+names = ["Sarbesh", "Rahul", "Amit"]
+
+for name in names:
+    print(name)
+
+```
+
+> Output
+Sarbesh
+Rahul
+Amit
+
+
+
+> Why this matters in production
+
+Imagine you're processing data from an API:
+
+```
+users = get_users()
+
+for user in users:
+    process_user(user)
+
+```
+
+You don't care whether there are 10 users or 10,000 users.
+
+
+
+
+
+
+-------------------------------------------------------------------
+
+
+
+
+
+## break 
+
+- It means Immediately terminate the current loop.
+
+
+> Example 1
+
+for i in range(10):
+    if i == 5:
+        break
+
+    print(i)
+
+
+> Output
+0
+1
+2
+3
+4
+
+
+- when i == 5 becomes true , Python executes break.  The Loop ends immediately 
+
+
+
+
+> Production : when break is uselful?
+
+Imagine searching for something:
+
+numbers = [4, 7, 2, 9, 15, 3]
+
+for number in numbers:
+    if number == 9:
+        print("Found!")
+        break
+
+- Once you've found what you're looking for, there's no reason to continue searching.
+
+
+
+
+
+
+---------------------------------------------------------------------
+
+
+
+
+
+## continue 
+
+- It means Stop the current iteration right here and immediately move to the next iteration.
+
+
+> example 1
+
+for i in range(1, 6):
+
+    if i == 3:
+        continue
+
+    print(i)
+
+
+> Output
+1
+2
+4
+5
+
+
+> Trace:
+
+**Iteration 1**
+i = 1
+i == 3? No
+print(1)
+
+
+**Iteration 2**
+i = 2
+i == 3? No
+print(2)
+
+
+**Iteration 3**
+i = 3
+i == 3? Yes
+continue                         // python dosent execute print(i)  .   It jumps back to the loop and starts the next iteration.
+
+
+**Iteration 4**
+i = 4
+print(4)
+
+
+**Iteration 5**
+i = 5
+print(5)
+
+
+
+
+> Remember
+
+break
+  ↓
+EXIT LOOP COMPLETELY
+
+
+continue
+  ↓
+SKIP THIS ITERATION
+  ↓
+NEXT ITERATION
+
+
+
+
+> Production : A realistic use of continue 
+
+Suppose you're processing numbers and only want to work with positive numbers:
+
+```
+numbers = [10, -5, 20, -3, 30]
+
+for number in numbers:
+
+    if number < 0:
+        continue
+
+    print(number)
+
+```
+
+> Output
+10
+20
+30
+
+
+- here continue means Negative numbers aren't relevant to this processing, so skip them.  Filtering Logic 
+
+
+
+
+
+
+----------------------------------------------------------------------------
+
+
+
+
+
+
+## Nested loop
+
+
+
+
+
+
+ 
 
 
 

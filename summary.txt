@@ -1,0 +1,308 @@
+
+Part 2-
+9. Type Conversion / Casting 
+10. Sum program 
+11. String methods 
+12. Keywrods 
+
+
+
+Part 3-
+ Arithmetic operators
+ Comparison operators 
+ Logical Operators 
+ Condition (if/else)
+
+
+
+part 4- 
+Range 
+while loop 
+for loop 
+break & continue 
+
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+22. Quick Interview Cheat Sheet
+Input
+input()
+
+Takes user input and returns a string.
+
+Type checking
+type(value)
+
+Tells you the type of a value.
+
+Conversion
+int()
+float()
+str()
+bool()
+
+Explicitly converts values.
+
+String methods
+.upper()
+.lower()
+.find()
+.replace()
+.startswith()
+Membership
+in
+not in
+Arithmetic
++   -   *   /   //   %   **
+Comparison
+>   <   >=   <=   ==   !=
+Logical
+and
+or
+not
+Conditions
+if
+elif
+else
+
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+1. Python fundamnetals 
+Variables
+Data types
+Input/output
+if / elif / else
+for
+while
+range()
+Functions
+Parameters
+return
+Scope
+Lists
+Tuples
+Sets
+Dictionaries
+Strings
+Basic slicing
+List/dict comprehensions
+Exception handling
+Modules/imports
+
+
+
+2. Programming fundamentals ⭐
+This is actually more important than knowing 100 Python tricks.
+We'll work on:
+
+Breaking a problem into steps
+Loops and conditions
+Functions
+State changes
+Searching
+Counting
+Frequency maps
+Sorting
+Two pointers
+Sliding window
+Recursion
+Basic complexity analysis
+Debugging
+Edge cases
+
+
+
+3. Imp data structures 
+list
+dict
+set
+tuple
+string
+
+You should become extremely comfortable with:
+append()
+pop()
+remove()
+sort()
+sorted()
+reverse()
+split()
+join()
+strip()
+replace()
+get()
+items()
+keys()
+values()
+
+
+And understand when to choose:
+
+list → ordered collection
+set → uniqueness / fast membership
+dict → key-value lookup
+tuple → fixed/grouped values
+string → text
+
+
+
+4. Intermediate Python
+Then we'll move into things that actually start appearing in real projects:
+
+File handling
+JSON
+CSV
+APIs
+requests
+Environment variables
+Logging
+Exceptions
+Classes/OOP
+Dataclasses
+Virtual environments
+Packages
+pip
+Type hints
+Testing
+Git
+Debugging
+
+This is where Python starts becoming a professional development tool.
+
+
+
+
+5. Data Engineering-specific Python
+If data engineering:
+
+Python
+   ↓
+Files
+   ↓
+CSV / JSON
+   ↓
+SQL
+   ↓
+APIs
+   ↓
+Data cleaning
+   ↓
+Pandas
+   ↓
+ETL / ELT
+   ↓
+Databases
+   ↓
+Data pipelines
+   ↓
+Airflow
+   ↓
+Cloud
+
+
+
+6. Interview prep
+Qt- Given a list of numbers, find the number that appears most frequently.
+
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+
+
+
+Python needed for MerchantGuard 
+
+# The Python you actually need
+
+Before we start `risk_evaluator.py`, these are the concepts I want you to know:
+
+### Level 1 — Absolutely required
+
+- Variables
+- Strings
+- Integers
+- Lists
+- Dictionaries
+- `None`
+- `if`
+- `for`
+- Functions
+- Arguments
+- Return values
+- Classes
+- Objects
+- `self`
+- Methods
+- Imports
+- Exceptions
+- `try/except`
+
+### Level 2 — Required for your code
+
+- Type hints
+- `dataclass`
+- `field`
+- List/dict comprehensions
+- `lambda`
+- `staticmethod`
+- `with`
+- `Path`
+- f-strings
+- `any()`
+- `all()`
+- `sum()`
+- `min()`
+- `max()`
+- `set`
+- `defaultdict`
+
+### Level 3 — Understand conceptually
+
+- Regex
+- HTTP requests
+- HTML parsing
+- DNS
+- WHOIS
+- TLS
+- JSON
+- Pandas
+- Playwright
+
+
+
+--------------------------------------------------------------------------------
+
+
+
+## Python needed for starting risk_evaluator.py
+
+
+
+1. Variables
+2. Strings, integers, booleans, `None`
+3. Lists
+4. Dictionaries
+5. `if / elif / else`
+6. `for` loops
+7. Functions
+8. Parameters and return values
+9. `import`
+10. Classes and objects
+11. `self`
+12. Methods
+13. `try / except`
+14. `with`
+15. Type hints
+16. `dataclass`   
+
+17. List/dict comprehensions
+18. `*args` / `**kwargs` — basic understanding
+19. `lambda` — basic understanding
+20. `Path`
+21. f-strings
+22. `enumerate`
+23. `any`, `all`, `sum`, `min`, `max`

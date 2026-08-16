@@ -17,6 +17,7 @@
 - [11. Condition if/else statements](#11-Conditional-statements) 
 - [12. Mini Project Calculator](#12-mini-project-calculator)
 - [13. loops](#13-loops)
+- [14. 4th exercise](#14-Multiple-Exercises)
 - 
 
 
@@ -1539,8 +1540,64 @@ while i < 5:
 
 
 
+>>>  Example 1 of pattern printing using while
 
---------------------------------------------------------------------
+i = 1
+while i <= 5:
+    print(i * '*')
+    i = i + 1
+
+
+> Output
+*
+**
+***
+****
+*****
+
+
+### Explaination- 
+whenever an integer number is multiplied by a string, that no of times the strings gets repeated.  Multiplication * here is used as concatenation 
+
+
+>>> like for eg
+i = 1
+while i <= 5:
+    print(i * 'hello')
+    i = i + 1
+
+> Output:
+hello
+hellohello
+hellohellohello
+hellohellohellohello
+hellohellohellohellohello
+
+
+
+
+
+>>> Reverse pattern printing using while 
+
+i = 5
+while i > 0:
+    print(i * '*')
+    i = i - 1
+
+
+> Output
+*****
+****
+***
+**
+*
+
+
+
+
+
+
+----------------------------------------------------------------------
 
 
 
@@ -1562,6 +1619,25 @@ for i in range(5):
 2
 3
 4
+
+
+
+
+>>> Another example
+
+nums = range(5)
+
+for i in nums:
+  print(i)
+
+
+> Output
+0
+1
+2
+3
+4
+
 
 
 
@@ -1590,9 +1666,12 @@ for i in range(2,6):
 
 
 
-> Example 3
 
-for i in range(2, 11, 2):
+
+
+> Example 3: Another way of finding even numbers 
+
+for i in range(2, 11, 2):         
       print(i)
 
 > Output:
@@ -1605,9 +1684,10 @@ for i in range(2, 11, 2):
 
 
 
-> Example 4
 
-for i in range(1, 11):                                         // to check even no 
+> Example 4: Cleaner approach for finding even numbers 
+
+for i in range(1, 11):                                                        // to check even no 
     if i % 2 == 0:
         print(i)
 
@@ -1620,8 +1700,40 @@ for i in range(1, 11):                                         // to check even 
   
 
 
+>>> Example 5: printing multiples of 3 from (1 to 30)
 
-#### Concept 
+for i in range(1,31):
+  if i % 3 == 0:
+    print(i)
+
+
+> Output
+3
+6
+9
+12
+15
+18
+21
+24
+27
+30
+
+
+
+
+#### Default structure of range 
+
+range (start, stop, step )
+range (optional, must, optional)
+range (0,must,0)
+
+
+
+
+
+
+#### Concept of for loop 
 
 in c++ we use for loops like this
 
@@ -1715,6 +1827,31 @@ for i in range(10):
 
 
 
+>>> Example 2: printing multiples of 3 from (1 to 30) but stop when number reaches 21 
+
+for i in range(1,31):
+  if i == 21:
+    break
+  if i % 3 == 0:
+    print(i)
+
+print("out of loop")
+
+
+> Output
+3
+6
+9
+12
+15
+18
+out of loop 
+
+
+
+
+
+
 > Production : when break is uselful?
 
 Imagine searching for something:
@@ -1741,7 +1878,8 @@ for number in numbers:
 
 ## continue 
 
-- It means Stop the current iteration right here and immediately move to the next iteration.
+- It means Stop the current iteration right here and immediately move to the next iteration. 
+- skiping some particular iteration 
 
 
 > example 1
@@ -1837,6 +1975,30 @@ for number in numbers:
 
 
 
+>>> Example: printing multiples of 3 from (1 to 30) but skip the number 21 
+
+for i in range(1,31):
+  if (i == 21):
+    continue
+  if (i % 3 == 0):
+    print(i)
+
+
+> Output
+3
+6
+9
+12
+15
+18
+24
+27
+30
+
+
+
+
+
 
 ----------------------------------------------------------------------------
 
@@ -1847,17 +2009,305 @@ for number in numbers:
 
 ## Nested loop
 
+- A loop inside another loop 
+
+
+
+>>> Example
+
+for i in range(3):
+    for j in range(3):
+        print(i, j)
+
+
+> trace:
+
+Outer loop starts: i = 0
+Inner loop:
+j = 0 → print(0, 0)
+j = 1 → print(0, 1)
+j = 2 → print(0, 2)
+
+
+Outer loop: i = 1
+Inner loop starts again from begining 
+j = 0 → print(1, 0)
+j = 1 → print(1, 1)
+j = 2 → print(1, 2)
+
+
+Outer loop: i = 2
+and again inner loop:
+j = 0
+j = 1
+j = 2
+
+
+> Output:
+0 0
+0 1
+0 2
+1 0
+1 1
+1 2
+2 0
+2 1
+2 2
+
+
+
+#### Mental model
+The inner loop completes all its iterations for every single iteration of the outer loop.
+
+
+
+#### Why nested loops matter for interviews?
+
+
+Suppose:
+
+for i in range(n):
+    for j in range(n):
+        print(i, j)
+
+
+- The outer loop runs n times.
+- For each outer iteration, the inner loop runs n times.
+- therefore, n × n = n²
+- time complexity ->  O(n²)
+
+
+You'll encounter them in:
+matrix problems
+2D arrays
+brute-force solutions
+pair comparisons
+sorting algorithms
+graph algorithms
+pattern problems
 
 
 
 
 
+#### nested loops + break
+
+Consider:
+
+for i in range(3):
+
+    for j in range(5):
+
+        if j == 2:
+            break
+
+        print(i, j)
+
+
+- break breaks the inner loop only and not outer loop 
+
+for i = 0
+inner loop:
+j = 0 → print
+j = 1 → print
+j = 2 → break
+
+
+> Output
+0 0
+0 1
+1 0
+1 1
+2 0
+2 1
+
+
+
+
+
+
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
  
 
 
 
 
 
+
+# 14-multiple-exercises
+
+
+1. Problem stat- Print all odd numbers from 1 to 20 
+
+```
+for i in range(1,21):
+  if (i % 2 != 0):
+    print(i)
+
+```
+
+> Output
+1
+3
+5
+7
+9
+11
+13
+15
+17
+19
+
+
+
+#### ALternative way 
+
+for i in range(1,21,2):
+    print(i)
+
+
+
+------------------------------------------------
+
+
+
+2. Problem stat- Print the table of 57
+
+```
+for i in range(1,11):
+  print(57 * i)
+
+```
+
+> Output
+57
+114
+171
+228
+285
+342
+399
+456
+513
+570
+
+
+
+#### refined way 
+
+```
+for i in range(1, 11):
+    print(57, "x", i, "=", 57 * i)
+
+```
+
+> Result:
+57 x 1 = 57
+57 x 2 = 114
+57 x 3 = 171
+.. .. .... 
+
+
+
+
+#### same thing with while loop 
+
+```
+i = 1
+
+while i <= 10:
+    print(57 * i)
+    i = i + 1
+
+```
+
+
+#### Alt way of writing in while 
+
+```
+i = 1
+
+while i in range(1, 11):
+    print(57 * i)
+    i = i + 1
+
+```
+
+
+- while expects condition in True or False  unlike for loop but this thing can also work 
+- but in real production code, you would usually use while with a condition that expresses the actual stopping rule rather than i in range(...).
+
+
+
+#### Real usage of while 
+
+while password != correct_password:
+    password = input("Enter password: ")
+
+
+while not connected:
+    connect_to_server()
+
+
+while queue:
+    item = queue.pop(0)
+    process(item)
+
+
+
+for → "Go through these things / repeat this known number of times."
+while → "Keep doing this until this condition changes."
+
+
+
+
+
+
+--------------------------------------------------------------------
+
+
+
+
+3. Problem stat- Print all multiples of 3 from 1 to 50 but skip 15 
+
+```
+for i in range(1,51):
+  if (i == 15):
+    continue 
+  if (i % 3 == 0):
+    print(i)
+
+```
+
+> Output
+3
+6
+9
+12
+18
+21
+24
+27
+30
+33
+36
+39
+42
+45
+48
+
+
+
+--------------------------------------------------------------------
+
+
+
+
+4. Take two integers a and b as input. Find and print the first number between 1 and 1000 that is divisible by both numbers.
+
+
+```
 
 
 

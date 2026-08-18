@@ -18,7 +18,9 @@
 - [12. Mini Project Calculator](#12-mini-project-calculator)
 - [13. loops](#13-loops)
 - [14. 4th exercise](#14-Multiple-Exercises)
-- 
+- [15. Python Data Structure](#15-Data-Structure)
+- [Lists](#Lists)
+- [Tuple](#Tuple)
 
 
 
@@ -2308,6 +2310,47 @@ for i in range(1,51):
 
 
 ```
+a = int(input("Enter first number: "))
+b = int(input("Enter second number: "))
+
+
+for i in range(1,1001):
+  if (i % a == 0) and (i % b == 0):
+    print("The first no to be divisible by both" , i)
+    break
+
+```
+
+
+
+> Output
+Enter first number: 4
+Enter second number: 5
+The first no to be divisible by both 20
+
+
+Enter first number: 4
+Enter second number: 6
+The first no to be divisible by both 12
+
+
+
+
+#### Remember
+
+  %   ->   "What is the remainder when the LEFT number is divided by the RIGHT number?"
+
+
+**X % Y == 0**
+
+20 is divisible by 5
+20 % 5 == 0
+
+36 is divisible by 9
+36 % 9 == 0
+
+i is divisible by a
+i % a == 0
 
 
 
@@ -2317,6 +2360,7 @@ for i in range(1,51):
 
 
 
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 
 
@@ -2325,12 +2369,832 @@ for i in range(1,51):
 
 
 
+# 15-Data-Structure 
+
+
+
+# Lists 
+
+- A list stores multiple values in one variable. 
+- It is written using square brackets []
+- A list can contain values of different data types.
+- Lists are Mutuable. You can change the contents of the list after creating it. 
+
+
+Let's say I want to type marks of different students and I need to type everytime seperately like:
+marks1 = 99
+marks2 = 90
+marks3 = 50
+
+List solves it by grouping related values into one variable like:
+marks = [99, 90, 50]
+
+marks = [99, 90, 50]
+         ↑   ↑   ↑   
+         0   1   2        // indexes 
+
+
+
+- A list can contain different data types
+    data = [10, "Python", 3.14, True]
+
+- Python allows this, although in production code you'll usually have logically related data in a list.
+
+
+
+
+>>> example 1 
+
+marks = [96, 98, 67, 'S']
+
+print(marks)
+print(len(marks))                                        // calculating the length of the list 
+
+
+> Output:
+[96, 98, 67, 'S']
+4
+
+
+
+
+### Accessing elements- indexes 
+
+
+>>> Example 2
+
+names = ["Sarbesh", "Rahul", "Amit"]
+print(name[0])
+
+
+> Output
+Sarbesh
+
+
+- Python, like C++, uses zero-based indexing.
+
+- Index:   0          1        2
+        ↓           ↓        ↓
+      Sarbesh     Rahul     Amit
+
+
+names[0]    //  Sarbesh
+names[1]    //  Rahul
+names[2]    //  Amit
+
+
+
+
+>>> Example 3: Negative Indexing 
+
+names = ["Sarbesh", "Rahul", "Amit"]
+print(names[-1])
+
+> Output:
+Amit 
+
+
+- Because -1 means last element.
+
+- Index:    0        1        2
+           -3       -2       -1
+            ↓        ↓        ↓
+        Sarbesh    Rahul     Amit
+
+
+
+names[-1]  # last               // Amit 
+names[-2]  # second last        // Rahul 
+
+
+
+----------------------------------------------------
+
+
+
+### Lists are mutuable 
+
+Lists are mutable, meaning their elements can be added, removed or changed.
+
+
+>>> example 4
+
+marks = [98, 97, 95]
+marks[0] = 100
+
+print(marks)
+
+
+> Output:
+[100, 97, 95]
+
+
+
+>>> example 5
+marks = [85, 72, 91]
+marks[1] = 80
+
+print(marks)
+
+
+> Output:
+[85, 80, 91]
+
+
+- The list itself was modified.
+
+List → mutable
+Tuple → immutable
+
+
+
+----------------------------------------------
+
+
+
+## Adding elements — append()
+
+- append() adds an element at the end of the list 
+
+
+>>> Example 6 
+
+names = ["Sarbesh", "Rahul"]
+names.append("Amit")
+
+print(names)
+
+
+> Output:
+["Sarbesh", "Rahul", "Amit"]
+
+
+
+
+
+## Adding at a particular position — insert()
+
+- insert() adds an element at a particular position. 
+
+
+>>> Example 7: Suppose you want name Rahul between 2 names that is in 2nd postion 
+
+names = ["Sarbesh", "Amit"]
+
+names.insert(1, "Rahul")
+
+print(names)
+
+
+> Output:
+["Sarbesh", "Rahul", "Amit"]
+
+
+
+- The first argument is the position, and the second is the value.
+
+Syntax-
+list.insert(index, value)
+
+
+
+---------------------------------------------------------------
+
+
+
+
+## Removing elements 
+
+
+#### remove()
+
+- remove() removes the value you specify.
+
+>>> Example 8 
+names = ["Sarbesh", "Rahul", "Amit"]
+names.remove("Rahul")
+
+print(names)
+
+
+> Output
+["Sarbesh", "Amit"]
+
+
+
+
+#### pop()
+
+>>> Example 9
+names = ["Sarbesh", "Rahul", "Amit"]
+names.pop()                                                               // pop() removes the last element unless specified 
+
+print(names)
+
+> Output:
+["Sarbesh", "Rahul"]
+
+
+
+
+>>> Example 10 
+names = ["Sarbesh", "Rahul", "Amit"]
+names.pop(1)                                                             // pop(1) means remove the element at index 1 
+
+print(names)
+
+
+> Output
+['Sarbesh', 'Amit']
+
+
+
+
+#### pop() returns the removed element 
+
+removed = names.pop()
+print(removed)
+
+
+
+
+#### clear()
+
+
+>>> Example 11
+
+marks = [98, 97, 95, 93.5, "A"]
+marks.clear()
+
+print(marks)
+print(len(marks))
+
+> Output
+[]
+0
+
+
+
+----------------------------------------------------------
+
+
+
+#### checking for an element 
+
+>>> Example 12
+
+marks = [98, 97, 95, 93.5, "A"]
+print(95 in marks)
+print(99 in marks)
+
+> Output
+True
+False
+
+
+
+------------------------------------------------------
+
+
+
+### Remember- 
+
+num = range(5)
+print(num)
+
+Output-
+range(0, 5)           
+
+❌ I will not get 0,1,2,3,4 . For that I need to convert them into list 
+
+
+> Code:
+
+num = range(5)
+print(list(num))
+
+> Output-
+[0, 1, 2, 3, 4]
+
+
+
+
+-----------------------------------------------------
+
+
+
+
+
+## looping directly over a list
+
+
+
+>>> Example 13: just see this , its not looping 
+
+numbers = [10, 20, 30, 40]
+print(numbers)
+
+
+> Output
+[10, 20, 30, 40]
+
+
+
+
+
+>>> Example 14: Looping directly over a list (pythonic)
+
+numbers = [10, 20, 30, 40]
+for number in numbers:
+  print(number)
+
+
+> Output
+10
+20
+30
+40
+
+
+
+
+
+>>> Example 15: by using range and len. I can use Eg 14 and I don't need this process
+
+numbers = [10, 20, 30, 40]
+for i in range(len(numbers)):
+    print(numbers[i])
+
+
+> Output
+10
+20
+30
+40
+
+
+
+- Both are valid. (Eg 14 & 15). The first is usually cleaner when the index isn't needed. First is more pythonic 
+
+
+
+
+
+### Concept
+
+
+**Eg 14: First approach — iterate over the values**
+
+```
+numbers = [10, 20, 30, 40]
+
+for number in numbers:
+    print(number)
+
+```
+
+- Python directly takes each element/value from the list.
+- So number is actually holding the value.
+- You don't care where the value is located.
+- This is usually what you use in production
+  
+number → VALUE
+
+
+For example, suppose you get users from a database/API:
+```
+users = ["Alice", "Bob", "Charlie"]
+
+for user in users:
+    send_email(user)
+
+```
+- For every user, send an email. You don't care whether Alice is at index 0 or index 500.
+
+
+
+
+
+**Eg 15: Second approach — iterate over indexes**
+
+```
+numbers = [10, 20, 30, 40]
+
+for i in range(len(numbers)):
+    print(numbers[i])
+
+```
+
+- 1st,  len(numbers) gives 4
+- 2nd,  range(4) gives 0 1 2 3 
+- 
+
+So, the loop does:
+i = 0 → numbers[0] → 10
+i = 1 → numbers[1] → 20
+i = 2 → numbers[2] → 30
+i = 3 → numbers[3] → 40
+
+- Here i is not the value.  i is the index/location.
+
+i → INDEX
+
+
+
+
+#### Why we need index then?
+
+1. Suppose you want to modify elements based on their position.
+numbers = [10, 20, 30, 40]
+- u want to double very element 
+
+```
+numbers = [10, 20, 30, 40]
+for i in range(len(numbers)):
+    numbers[i] = numbers[i] * 2
+    print(numbers[i])
+
+```
+
+> Output
+20
+40
+60
+80
+
+
+
+
+2. and there's another use case: Print the position of every number.
+
+```
+numbers = [10, 20, 30, 40]
+
+for i in range(len(numbers)):
+    print("Index:", i, "Value:", numbers[i])
+
+```
+
+> Output
+Index: 0 Value: 10
+Index: 1 Value: 20
+Index: 2 Value: 30
+Index: 3 Value: 40
 
 
 
 
 
 
+>>> Wrong version of Example 15: ❌
+
+numbers = [10,20,30,40]
+for i in range(numbers):
+    print(numbers[i])
+
+Error-> TypeError: 'list' object cannot be interpreted as an integer
 
 
+- python can read what's there in numbers in list format 
+- but range() needs integer values whereas in list integer, char, bool everything can get stored 
+- python don't assume range([])  ,  it needs range(5)  or range(2,6) or something integer bound 
+- so len(numbers) solves this.  if  numbers = [10,20,30,30]   then len(numbers) produces 4  
+- len produces 4, so range(4) 
+- range(4) means 0,1,2,3 
+
+
+
+
+
+>>> Example 16: When we need index 
+
+numbers = [10, 20, 30]
+
+for i in range(len(numbers)):
+    print(i, numbers[i])
+
+
+> Output
+Output->
+0 10
+1 20
+2 30
+
+
+
+
+
+#### python list vs C++ vector comparison 
+
+
+1. Python:
+
+numbers = [10, 20, 30]
+numbers.append(40)
+
+
+2. C++
+
+vector<int> numbers = {10, 20, 30};
+numbers.push_back(40);
+
+
+
+| Python          | C++                     |
+| --------------- | ----------------------- |
+| list            | vector                  |
+| list[index]     | vector[index]           |
+| append()        | push_back()             |
+| len(list)       | vector.size()           |
+| for x in list   | for (auto x : vector)   |
+
+
+
+
+So:
+list → collection of VALUES
+range → generates NUMBERS
+len → tells me HOW MANY values are in the list
+
+
+
+
+--------------------------------------------------------------
+
+
+
+
+## slicing 
+
+- Slicing extracts part of a list
+- it means Taking a portion of a list without changing the original list.
+
+
+
+numbers = [10, 20, 30, 40, 50]
+Indexes:
+
+Value:    10   20   30   40   50
+Index:     0    1    2    3    4
+          -5   -4   -3   -2   -1
+
+
+
+1. **Basic syntax**
+
+list[start:stop]
+
+start is included, stop is excluded.
+
+> Eg:
+numbers = [10, 20, 30, 40, 50]
+print(numbers[1:4])
+
+
+means:
+start at index 1
+↓
+20  30  40
+         ↑
+      stop at 4 (not included)
+
+
+> Output:
+[20, 30, 40]
+
+
+
+
+
+2. **Leaving start or stop empty**
+
+> Eg: from the beginning 
+numbers = [10, 20, 30, 40, 50]
+print(numbers[:3])                                                     // Start from the beginning and stop before index 3.
+
+
+> Output
+[10, 20, 30]
+
+
+
+> Eg: Until the end 
+numbers = [10, 20, 30, 40, 50]
+print(numbers[2:])
+
+
+> Output
+[30, 40, 50]
+
+
+
+
+
+3. **So,**
+
+numbers[:3]   # beginning → index 3
+numbers[2:]   # index 2   →  end
+
+
+
+
+4. **Adding a step**
+
+list[start:stop:step]
+
+
+> Eg
+numbers = [10, 20, 30, 40, 50]
+numbers[0:5:2]
+
+Start at 0, stop before 5, jump by 2:
+
+
+> Output
+[10, 30, 50]
+
+
+
+
+5. **Reverse a list**
+
+numbers = [10, 20, 30, 40, 50]
+numbers[::-1]
+
+> Output
+[50, 40, 30, 20, 10]
+
+
+
+
+#### Remember 
+
+1. numbers[start:stop:step]
+
+2. numbers[1:4]
+   1, 2, 3
+
+
+3. numbers[:3]   # beginning → 2
+   numbers[2:]   # 2 → end
+
+
+4. numbers[::2]    # every 2nd element
+   numbers[::-1]   # reverse
+
+
+
+
+#### Helpful in interview / prod 
+
+first_three = numbers[:3]
+last_three = numbers[-3:]
+
+
+
+
+
+
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+
+
+
+
+# Tuple
+
+
+- A tuple stores multiple values and is written using parentheses () 
+- Tuples are immutable, so their elements cannot be changed
+- we use Tuple, when we want fixed values and not something changeable like GPS coordinates 
+
+
+>>> Example 1
+
+numbers = (10, 20, 30, 40)
+print(numbers)
+
+> Output
+(10, 20, 30, 40)
+
+
+
+1.  we can access the element just like the list.
+ 
+numbers = (10, 20, 30, 40)
+print(numbers[0])
+
+> Output
+10 
+
+
+
+2. Indexing and slicing works in tuple also 
+numbers[-1]
+numbers[1:3]
+
+
+
+3. **I cannot modify** 
+
+numbers = [10, 20, 30]                 // List can modify 
+numbers[0] = 100
+print(numbers)                         // [100, 20, 30]
+
+
+
+numbers = (10, 20, 30)                 ❌❌❌
+numbers[0] = 100
+
+
+- Because tuples are immutable.
+- Once the tuple is created, you cannot modify its elements.
+
+
+
+4. Different data types supported just like List 
+person = ("Sarbesh", 24, True)
+
+
+
+5. I can loop through tuple 
+
+numbers = (10, 20, 30, 40)
+for number in numbers:
+    print(number)
+
+
+
+6. append()   ❌
+   remove()   ❌
+   pop()      ❌
+   insert()   ❌
+
+
+
+7. count()    ✔
+   index()    ✔
+
+
+
+>>> Example 1
+
+numbers = (10, 20, 20, 30)
+print(numbers.count(20))
+
+> Output
+2
+
+
+
+
+>>> Example 2
+
+numbers = (10, 20, 20, 30)
+print(numbers.index(30))
+
+> Output
+3
+
+
+
+8. Single element tuple needs a comma 
+
+x = (10, 20, 30)   ✔
+x = (10,)          ✔
+x = 10             ❌                   // this is an integer 
+
+
+
+
+9. In Python code, you'll commonly encounter tuples when:
+
+a function returns multiple values
+representing fixed groups of values
+working with dictionary keys
+working with database/query results
+unpacking values
+
+
+```
+person = ("Sarbesh", 24)
+
+name, age = person
+
+print(name)
+print(age)
+
+```
+
+> Output
+Sarbesh
+24
+
+- Here the tuple contains two related values, and Python unpacks them into two variables.
+
+
+
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------
 

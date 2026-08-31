@@ -5,6 +5,7 @@ venv/
 .env
 
 test.py 
+test2.py
 
 scribble.py 
 

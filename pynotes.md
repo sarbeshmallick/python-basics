@@ -21,6 +21,10 @@
 - [15. Python Data Structure](#15-Data-Structure)
 - [Lists](#Lists)
 - [Tuple](#Tuple)
+- [Set](#Set)
+- [Dictionary](#Dictionary)
+- [16. 5th exercise](#16-Fifth-Exercise)
+- 
 
 
 
@@ -43,6 +47,7 @@ print("Hello", "World")                        // Multiple values can be printed
 
 
 > **Comments**
+
 Use # for comments
 
 and to selected multiple block of code just click Ctrl + /
@@ -96,7 +101,7 @@ print(age)
 - to print varibales just type print(variable name)  and no need of " " even its a string 
 
 
-### varibale code- 
+### variable  code- 
 ```
 name = "Sarbesh"
 
@@ -167,6 +172,8 @@ Not: true and false. Python is case-sensitive.
 
 **Use the built-in type() function:**
 
+print(type(variable name))
+
 
 ### type check code-
 ```
@@ -215,6 +222,7 @@ print(name)
 
 
 ### Eg code-
+
 ```
 name = input("What is ur name: ")
 profession = input(" what is ur job: ")
@@ -238,6 +246,7 @@ Dev
 
 
 ### 6. Input code- 
+
 ```
 name = input("Enter your name: ")
 
@@ -248,7 +257,8 @@ print("Namaste" , name)
 Enter your name: Sarbesh
 
 >Output- 
-Hello Namaste Sarbesh
+Namaste Sarbesh
+
 
 
 
@@ -256,7 +266,7 @@ Hello Namaste Sarbesh
 
 suppose my python filename is 6. Input.py 
 
-- if we run this program using python filename.py then remember as I have used spaces to use " "  in terminal 
+- if we run this program using python filename.py then remember as I have used spaces so  use " "  in terminal 
 - like for example-
     python "6. Input.py"
 
@@ -313,6 +323,7 @@ Hello Sarbesh
 
 
 ### 7. concatenation code-
+
 ```
 name = input("Enter your name: ")
 
@@ -341,10 +352,10 @@ Hello Namaste Sarbesh
 
 
 Problem stat-
-<!-- # Add a person with first name as Tony and last name as Stark.
-# Tony's age is 53.
-# Tony's height is 1.85m.
-# Tony is secretly a superhero. Take his superhero name as input & print it. --> 
+Add a person with first name as Tony and last name as Stark.
+Tony's age is 53.
+Tony's height is 1.85m.
+Tony is secretly a superhero. Take his superhero name as input & print it. --> 
 
 
 ```
@@ -356,6 +367,7 @@ height = 1.85
 
 name = input("What is his superhero name: ")
 print(name)
+
 ```
 
 > Input 
@@ -391,12 +403,14 @@ bool()
 
 
 ### type casting code- 
+
 ```
 age = input("Enter your age: ")
 
 print (type(age))
 
 print (age)
+
 ```
 
 > Input
@@ -426,7 +440,9 @@ print (type(age))
 
 print (age)
 print (age + 1)
+
 ```
+
 
 > Input- Enter your age: 23
 
@@ -461,6 +477,7 @@ print(new_age)
 print (float(new_age))                              # here we converted int to float. It is not conversion but Reassignment 
 
 print (type(new_age))
+
 ```
 
 
@@ -503,6 +520,7 @@ print(type(age))
 
 
 
+
 ### Permanent conversion / reassignment- 
 
 age = 23
@@ -514,7 +532,7 @@ print(type(age))
 
 
 > Output
-23
+23.0
 <class 'float'>
 
 
@@ -524,16 +542,19 @@ print(type(age))
 
 ### Easy rule
 
-float(age)
+print(float(age))
 → temporary conversion
-- onverts the value for that expression; original variable remains unchanged.
+- converts the value for that expression; original variable remains unchanged.
+
 
 age = float(age)
+print(age)
 → conversion + reassignment
 - converts the value and stores the converted value back in the variable.
 
 
 You do not always need a new variable.
+
 
 > For example:
 
@@ -572,6 +593,27 @@ age = float(age)                // age is now float
 
 
 
+**OR**
+
+
+
+age = input("enter age: ")
+age = print(float(age) + 1.2)
+print(type(age))
+
+> Input
+enter age: 23
+
+> output
+24.2 
+<class 'NoneType'>
+
+
+- variable e like for example age = ... amra bina brackets chara use korte pari if we add smthng +  Eg-  age = age(...) + 1
+- but print e puro print statement ta bracket under e mane print(... + 1 )
+
+
+
 
 -------------------------------------------------------------
 
@@ -579,7 +621,7 @@ age = float(age)                // age is now float
 
 
 
-# Explicit vs Implicit Conversion 
+## Explicit vs Implicit Conversion 
 
 
 
@@ -643,8 +685,8 @@ print (1 + int(2.9999))                        // Type Casting     (explicit)   
 
 # 7-Second-Exercise 
 
-
-Problem stat- Sum Program where a , b integers nos we hv to take input and calc the sum of a & b and print it
+e
+Problem stat- Sum Program where a , b are integers nos & we hv to take input and calc the sum of a & b and print it
 
 ```
 a = input("Enter first number: ")
@@ -654,6 +696,7 @@ b = input("Enter second number: ")
 total = int(a) + int(b)
 
 print("the sum is" , total)
+
 ```
 
 
@@ -2371,6 +2414,11 @@ i % a == 0
 
 # 15-Data-Structure 
 
+Lists- []
+tuple= ()
+set = {}
+dict = {}
+
 
 
 # Lists 
@@ -3196,5 +3244,1398 @@ Sarbesh
 
 
 
-------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+
+
+
+# Set
+
+
+- A set stores unique values and is written using curly brackets {}
+- Repeated values are automatically removed.
+- Sets are unordered, so their display order is not guaranteed. 
+- They also do not support indexing.
+- looping is allowed 
+
+
+
+>>> Example 1
+numbers = {10, 20, 10, 30, 20, 40}
+print(numbers)
+
+> Output
+{10, 20, 30, 40}                                                   // removing the duplicates 
+
+
+
+#### 3 characteristics of Set-
+1. Unique elements 
+2. Unordered 
+3. Mutable
+4. No duplicates + no indexing 
+
+
+![alt text](assets/image.png)
+
+
+
+
+#### Sets dont hv indexes 
+
+- within a list:
+numbers = [10, 20, 30]
+print(numbers[0])
+
+Output- 
+10
+
+
+- in set:
+numbers = {10, 20, 30}
+print(numbers[0])
+
+Output-
+❌error 
+Because a set doesn't maintain elements in a meaningful positional order.
+
+
+
+
+#### Real life-
+
+1. checking permissions 
+
+permissions = {"read", "write", "delete"}
+if "write" in permissions:
+    print("User can write")
+
+- You don't care whether "read" is conceptually first or "delete" is third.
+- You care about: Does this permission exist?
+
+
+2. Membership checking
+
+**we can use-**
+if value in my_set:
+
+
+**eg-**
+
+allowed_roles = {"admin", "manager", "developer"}
+if "developer" in allowed_roles:
+    print("Access granted")
+
+
+
+
+#### Adding elements     .add()
+
+- Because sets are mutable, you can add elements.
+
+>>> Example 2 
+
+numbers = {10, 20, 30}
+numbers.add(40)
+print(numbers)
+
+> Output
+{10, 20, 30, 40}
+
+
+but if u want to add 
+numbers.add(20) 
+nothing changes cuz no duplicates in sets 
+
+
+
+#### Removing elements   .remove() , .discard()
+
+>>>> example 3 
+
+numbers = {10, 20, 30}
+numbers.remove(20)
+print(numbers)
+
+> Output
+{10, 30}
+
+- we can also use discard instead of remove. remove checks if element exists or not before removing but discard dosen't checks 
+
+
+>>> exmaple 4
+numbers = {10, 20, 30}
+numbers.discard(50)                           // 50 dosent exists 
+print(numbers) 
+
+> Output
+{10, 20, 30}
+
+
+
+#### looping over a set can be done but it is not ordered so be careful 
+
+
+
+#### Set Operations 
+
+
+>>> Example 5: Union
+
+A = {1, 2, 3, 4}
+B = {3, 4, 5, 6}
+
+print(A | B)                              // Union (|) - Values present in either set                // combine both sets and remove duplicates 
+
+> Output
+{1, 2, 3, 4, 5, 6}
+
+
+
+>>> Example 6: Intersection 
+
+A = {1, 2, 3, 4}
+B = {3, 4, 5, 6}
+
+print(A & B)                            // Intersection (&) - Values present in both                 // What do they have in common?   // useful in data processing 
+
+> Output
+{3, 4}
+
+
+
+>>> Example 7: Difference 
+
+A = {1, 2, 3, 4}
+B = {3, 4, 5, 6}
+
+print(A - B)                            // Difference (-)  - What does A have that B doesn't?   
+
+> Output
+{1, 2}
+
+
+
+
+#### Real world example of Set operations 
+
+>>> Example 8 
+
+frontend = {"React", "JavaScript", "HTML", "CSS"}
+
+backend = {"Python", "SQL", "JavaScript", "Docker"}
+
+
+print(frontend & backend)      ->  {"Javascript"}                                                                       // Technologies known by both
+
+print(frontend | backend)      ->  {"React", "JavaScript", "HTML", "CSS", "Python", "SQL", "Docker"}                    // All technologies
+
+print (frontend - backend)     ->  {"React", "HTML", "CSS"}                                                             // Frontend technologies not in backend
+
+
+
+
+
+
+#### Converting a list into Set 
+
+>>> Example 9
+
+numbers = [10, 20, 10, 30, 20, 40]
+unique_set = set(numbers)
+
+print(unique_set)
+
+> Output
+{40, 10, 20, 30}                                                // as usual not ordered 
+
+
+
+
+
+#### Syntax Trap 
+
+- An empty set is not {}
+- it is set()
+- {}   ->   Dictionary 
+
+Dictionary:
+x = {}    
+
+Set:
+x = set()
+
+
+
+
+>>> example code
+
+numbers = {10, 20, 10, 30, 10}
+
+print(numbers, len(numbers))
+
+for value in numbers:
+  print(value)
+
+
+> Output
+{10, 20, 30} 3
+10
+20
+30
+
+
+
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+
+
+
+# Dictionary 
+
+
+- A dictionary is a set of key value & pairs
+- key & its pair is denoted by :    like key : pair
+- key and its pair is sperated from another key and its pair by comma , 
+- key1 : pair1 , key2 : pair 2
+- we create dict by {} 
+- syntax- {}
+- dictonaries are mutable just like lists and sets 
+
+
+
+#### Now imagine a situation
+
+- with a list we can access postion/index like for eg- numbers[0]
+- but we have to remember the the index right like 0 here which is not so readable
+
+
+>>> example 
+
+Name → Sarbesh
+Age → 24
+Role → Developer
+
+
+**Using a list:**
+person = ["Sarbesh", 24, "Developer"]
+
+now u need to remember:
+0 → name
+1 → age
+2 → role
+
+
+- A dictionary lets us associate a key with a value
+
+**Using dict:**
+
+person = {
+    "name": "Sarbesh",
+    "age": 24,
+    "role": "Developer"
+}
+
+print(person["name"])                                       // now we can directly say person("[name]") and get Sarbesh so      print(variable["key"])
+
+> Output
+Sarbesh 
+
+
+print(person)
+
+> Output
+{'name': 'Sarbesh', 'age': 24, 'role': 'Developer'}
+
+
+
+
+**So**
+List:
+index → value
+
+Dictionary:
+key → value
+
+
+
+
+>>> example 2 
+
+marks = {"maths" : 99, "Physics" : 80, "Chemistry" : "Fail"}
+print(marks, "&&&" , type(marks), "&&&" ,  len(marks))
+
+> Output
+{'maths': 99, 'Physics': 80, 'Chemistry': 'Fail'} &&& <class 'dict'> &&& 3
+
+
+
+
+#### we access value in dictionary using key 
+
+person = {
+    "name": "Sarbesh",
+    "age": 24,
+    "role": "Developer"
+}
+
+print(person["name"])
+print(person["age"])
+
+> Output-
+Sarbesh
+24
+
+
+print(person[0])  ->  ❌             // dictonaries expect a key 
+
+
+
+
+#### useful scenarios in API call
+
+user = {
+    "id": 101,
+    "name": "Sarbesh",
+    "email": "sarbesh@example.com",
+    "active": True
+}
+
+- I can directly acess email by    user["email"]
+
+
+
+-----------------------------------------------------------
+
+
+
+#### Dictonaries are mutable
+
+>>> example
+
+person = {
+    "name": "Sarbesh",
+    "age": 24
+}
+
+person["age"] = 25
+print(person)
+
+
+> Output
+{"name": "Sarbesh", "age": 25}
+
+
+------------------------------------------------------
+
+
+
+#### Adding a key value pair : we dont need add()
+
+>>> example
+
+person = {
+    "name": "Sarbesh",
+    "age": 24
+}
+
+person["city"] = "Bengaluru"
+
+print(person)
+
+> Output
+{'name': 'Sarbesh', 'age': 24, 'city': 'Bengaluru'}
+
+
+- if city dosen't exists create it , if it exists update its value 
+
+
+
+
+#### removing data : .pop() or del
+
+>>> example 
+
+person = {
+    "name": "Sarbesh",
+    "age": 24,
+    "role": "Dev"
+}
+
+person.pop("age")
+del person ["role"]
+
+print(person)
+
+> Output
+{'name': 'Sarbesh'}
+
+
+
+-------------------------------------------------------------
+
+
+
+#### checking whether key exists or not 
+
+- u can't search for pair, u hv to search key 
+
+
+>>> eg
+
+person = {
+    "name": "Sarbesh",
+    "age": 24,
+    "email": "sarbeshmk@gmail.com"
+}
+
+if "email" in person:
+  print(person["email"])
+
+if "name" in person:
+  print(person["name"])
+
+
+> Output
+sarbeshmk@gmail.com
+Sarbesh
+
+
+if "Sarbesh" in person -> ❌          // cuz "Sarbesh" is a key and not value 
+if "name" in person -> ✔
+
+
+
+
+**OR**
+
+
+
+
+person = {
+    "name": "Sarbesh",
+    "age": 24,
+    "email": "sarbeshmk@gmail.com"
+}
+
+print("name" in person)
+print("role" in person)
+
+> Output
+True
+False
+
+
+
+
+
+------------------------------------------------------------------
+
+
+
+#### .get() method 
+
+- very frequently used with API/JSON data where some fields are missing
+
+
+>>> eg
+person = {
+    "name": "Sarbesh",
+    "age": 24
+}
+
+person["email"]  -> KeyError    // email dosen't exists 
+
+**To mitigate this:**
+
+person.get("email")                                    returns  none 
+
+OR
+
+person.get("email", "Not provided")                   returns Not provided 
+
+
+
+>>> example
+
+person = {
+    "name": "Sarbesh",
+    "age": 24
+}
+
+print(person.get("email"))
+
+> Output
+None
+
+
+print(person.get("email", "Not provided"))         ->   Not provided 
+
+
+
+>>> example
+
+person = {
+    "name": "Sarbesh",
+    "age": 24
+}
+
+print(person.get("email", "Not provided"))
+print(person.get("name", "Not provided"))
+
+> output
+Not provided
+Sarbesh 
+
+
+
+
+-----------------------------------------------------------
+
+
+
+
+#### Looping through dictionary 
+
+
+**Just Keys**
+
+- Python's default dictionary iteration is over keys
+
+
+>>> example
+
+person = {
+    "name": "Sarbesh",
+    "age": 24
+}
+
+for key in person:
+  print(key)
+
+
+> Output
+name
+age
+
+
+
+
+
+
+**Keys and Value**
+
+- we can use .items()
+
+>>> example
+
+person = {
+    "name": "Sarbesh",
+    "age": 24
+}
+
+for key, value in person.items():
+  print(key, value)                                                           //  print(key, ":", value)   we can add colon to make it more natural 
+
+
+> Ouput
+name Sarbesh
+age 24
+
+
+
+**OR** 
+
+
+
+person = {
+    "name": "Sarbesh",
+    "age": 24
+}
+
+for key in person:
+  print(key, person[key])
+
+
+> Output
+name Sarbesh
+age 24
+
+
+
+
+
+**If you wan to print only values**
+
+>>> eg
+
+person = {
+    "name": "Sarbesh",
+    "age": 24
+}
+
+for value in person.values():
+  print(value)
+
+> output
+Sarbesh
+24
+
+
+
+1. python dosent care about variable name here. 
+2. like for keys i cam literally do:
+        person = {
+       "name": "Sarbesh",
+       "age": 24
+        }
+          for value in person:
+            print(value)
+
+it will output-                                        // here i want values but got keys so keys looping is default so here store the key in varibale named value 
+name                                                   // if u need values then for x in person.values()
+age
+
+3. even with keys and values
+      
+      person = {
+        "name": "Sarbesh",
+        "age": "24
+      }
+        for x,y in person.items():
+            print(x,y)
+
+output-
+name Sarbesh
+age 24
+    
+
+
+
+-----------------------------------------------------------------
+
+
+
+
+#### Dictionary + Lists 
+
+
+>>> example
+
+users = [
+    {"name": "Alice", "age": 25},
+    {"name": "Bob", "age": 30},
+    {"name": "Charlie", "age": 28}
+]
+
+for user in users:
+    print(user["name"])
+
+
+> output
+Alice
+Bob
+Charlie
+
+
+
+### model-
+
+List
+ ├── Dictionary
+ ├── Dictionary
+ └── Dictionary
+
+
+
+
+>>> interesting example 1
+
+users = [
+    {"name": "Alice", "age": 25},
+    {"name": "Bob", "age": 30},
+    {"name": "Charlie", "age": 28}
+]
+
+for user in users:
+    print(user)
+
+
+> output
+{'name': 'Alice', 'age': 25}
+{'name': 'Bob', 'age': 30}
+{'name': 'Charlie', 'age': 28}
+
+
+
+>>> interesting example 2
+
+users = [
+    {"name": "Alice", "age": 25},
+    {"name": "Bob", "age": 30},
+    {"name": "Charlie", "age": 28}
+]
+
+for user in users:
+    print(user)
+    print(user["name"])
+
+
+> output
+{'name': 'Alice', 'age': 25}
+Alice
+{'name': 'Bob', 'age': 30}
+Bob
+{'name': 'Charlie', 'age': 28}
+Charlie
+
+
+
+>>> interesting example 3
+
+users = [
+    {"name": "Alice", "age": 25},
+    {"name": "Bob", "age": 30},
+    {"name": "Charlie", "age": 28}
+]
+
+for user in users:
+    print(users)
+
+
+> output
+[{'name': 'Alice', 'age': 25}, {'name': 'Bob', 'age': 30}, {'name': 'Charlie', 'age': 28}]
+[{'name': 'Alice', 'age': 25}, {'name': 'Bob', 'age': 30}, {'name': 'Charlie', 'age': 28}]
+[{'name': 'Alice', 'age': 25}, {'name': 'Bob', 'age': 30}, {'name': 'Charlie', 'age': 28}]
+
+
+
+
+>>> example 4
+
+users = [
+    {"name": "Alice", "age": 25},
+    {"name": "Bob", "age": 30},
+    {"name": "Charlie", "age": 28}
+]
+
+print(users)
+
+> output
+[{'name': 'Alice', 'age': 25}, {'name': 'Bob', 'age': 30}, {'name': 'Charlie', 'age': 28}]
+
+
+
+
+
+----------------------------------------------------------------------
+
+
+
+
+#### Dictionary + Dictionary 
+
+>>> example
+
+user = {
+    "name": "Sarbesh",
+    "address": {
+        "city": "Delhi",
+        "country": "India"
+    }
+}
+
+print(user["address"]["city"])
+
+> output
+Delhi 
+
+
+
+>>> example 
+
+user = {
+    "name": "Sarbesh",
+    "address": {
+        "city": "Delhi",
+        "country": "India"
+    }
+}
+
+print(user["address"])
+
+> output
+{'city': 'Delhi', 'country': 'India'}
+
+
+
+------------------------------------------------------------
+
+
+
+#### dictionary vs set 
+
+
+1. Set 
+numbers = {10, 20, 30}
+
+2. dict 
+person = {"name": "Sarbesh", "age": 24}
+
+
+3. Remember
+Set:
+{value, value, value}
+
+Dictionary:
+{key: value, key: value}
+
+
+
+4. empty dictionary 
+
+{}
+
+
+5. empty set 
+
+set()
+
+
+
+-----------------------------------------------
+
+
+
+### why dict matter in interviews
+
+You want:
+1 → 1
+2 → 2
+3 → 3
+
+>>> example
+
+numbers = [1, 2, 2, 3, 3, 3]
+frequency = {}
+
+for number in numbers:
+    frequency[number] = frequency.get(number, 0) + 1
+
+print(frequency)
+
+> output
+{1: 1, 2: 2, 3: 3}
+
+
+
+---------------------------------------------
+
+
+🧠 Your final mental model
+
+LIST
+→ Ordered
+→ Duplicates allowed
+→ Mutable
+→ Access by index
+
+TUPLE
+→ Ordered
+→ Duplicates allowed
+→ Immutable
+→ Access by index
+
+SET
+→ Unique values
+→ No meaningful indexing/order
+→ Mutable
+→ Fast membership checking
+
+DICTIONARY
+→ Key → Value
+→ Keys are unique
+→ Mutable
+→ Access by key
+
+
+
+- Mutable data types are slower compared to immutable data types
+- Tuple is faster 
+
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+
+
+
+
+# 16-Fifth-Exercise
+
+Problem statement-
+
+A. Given a list of roll numbers: [101, 105, 102, 101, 108, 105, 110]. Print all unique roll nums in the list.
+
+B. Given Employee records in the form of a list of tuples where each tuple contains:
+(Employee ID, Employee Name, Salary)
+Example - [
+    (101, "Alice", 50000),
+    (102, "Bob", 65000),
+    (103, "Charlie", 45000)
+]
+Ask user to enter Employee ID & search it inside records.
+
+
+```
+roll_number = [101, 105, 102, 101, 108, 105, 110]
+unique_number = set(roll_number)
+print("unique roll numbers" , unique_number)
+
+
+
+records = [
+  (101, "Alice", 50000),
+  (102, "Bob", 65000),
+  (103, "Charlie", 45000)
+]
+
+
+employee_id = int(input("Enter your employee id: "))
+
+
+for record in records:
+  if record[0] == employee_id:
+      print(record)
+      break
+
+```
+
+> Input
+Enter your employee id: 102
+
+> Output
+unique roll numbers {101, 102, 105, 108, 110}
+(102, 'Bob', 65000)
+
+
+
+
+#### Understand the code
+
+1.  There's a list and inside a list there are 3 tuples
+
+records
+   ↓
+┌─────────────────────────────┐
+│ (101, "Alice", 50000)       │  ← tuple 1
+│ (102, "Bob", 65000)         │  ← tuple 2
+│ (103, "Charlie", 45000)     │  ← tuple 3 
+└─────────────────────────────┘
+
+
+2.  Each tuple represents one employee.
+
+And inside each tuple:
+(101, "Alice", 50000)
+  ↑       ↑       ↑
+  ID     Name   Salary
+
+
+3. Records is our entire list. The loop takes one element from the list at a time and puts it into the variable record.
+   - Record varibale always gets updated. 
+   - First iteration  -> (101, "Alice", 50000)
+   - Second iteration -> (102, "Bob", 65000)  ...
+   - The variable record is not the entire list. It is one tuple at a time.
+ 
+ 
+
+ 4. for record in record means 
+     
+     for number in numbers:
+     number → one value from the list
+
+     for record in records:
+     record → one tuple from the list
+
+   
+    record = (101, "Alice", 50000)
+    record = (102, "Bob", 65000)
+    record = (103, "Charlie", 45000)
+
+
+    Then because record is a tuple, you can access its contents using:
+    record[0]   # ID
+    record[1]   # Name
+    record[2]   # Salary
+
+
+
+
+5. Now lets talk about record[0]
+    
+    - record is a tuple
+  
+During 1st iteration- 
+record = (101, "Alice", 50000)
+
+Tuples use indexes just like lists:
+
+      index
+        ↓
+(101, "Alice", 50000)
+ ↑       ↑       ↑
+ 0       1       2
+
+ record[0] -> Give me the value at index 0 of this tuple. -> 101
+ record[1] -> "Alice"
+ record[2] -> 50000
+
+
+
+
+ 6. if condition 
+
+if record[0] == employee_id:
+
+Suppose the user entered: 102 
+    So, employee_id = 102
+
+
+**First iteration**
+
+record = (101, "Alice", 50000)
+
+Therefore,
+     record[0] = 101
+
+
+The condition becomes:
+    101 == 102                            // that's false 
+
+That's false, So Python moves to the next iteration.
+
+
+
+**Second iteration**
+
+Now, 
+    record = (102, "Bob", 65000)
+
+Therefore,
+    record[0] = 102 
+
+The condition becomes:
+    102 == 102                             // true 
+
+True. So, python enters if block 
+
+
+
+#### Mental model
+
+Suppose the user enters: 102
+
+**The program effectively does:**
+
+employee_id = 102
+
+record = (101, "Alice", 50000)
+        ↓
+record[0] = 101
+        ↓
+101 == 102 → False
+        ↓
+next iteration
+
+record = (102, "Bob", 65000)
+        ↓
+record[0] = 102
+        ↓
+102 == 102 → True
+        ↓
+print(record)
+        ↓
+break
+        ↓
+STOP
+
+
+Output:
+(102, "Bob", 65000)
+
+
+
+
+### Alternatives: if we want to show Invalid when user enters a wrong employee id 
+
+
+1. **using found variable**
+
+```
+records = [
+    (101, "Alice", 50000),
+    (102, "Bob", 65000),
+    (103, "Charlie", 45000)
+]
+
+employee_id = int(input("Enter your employee id: "))
+
+found = False
+
+for record in records:
+    if record[0] == employee_id:
+        print(record)
+        found = True
+        break
+
+if not found:
+    print("Employee ID not found")
+
+```
+
+
+
+> What is found?
+
+found is simply a variable name
+found = False
+
+I could write it as x
+x = False 
+
+True/False are booleaans here 
+
+
+Initially,
+    found = False 
+
+
+
+> Mental concept: if user enters 102 
+
+Now imagine the user enters 102
+employee_id = 102
+
+Initially,
+    found = False
+
+So our state is:
+    employee_id = 102
+    found  = False
+
+
+**First loop iteration**
+
+record = (101, "Alice", 50000)
+if record[0] == employee_id:
+
+becomes,
+    if 101 == 102:
+
+False,
+    So nothing inside the if runs.
+    found is still:
+        False
+
+
+**Second iteration**
+
+record = (102, "Bob", 65000)
+
+The condition becomes:
+    if 102 == 102:
+
+True! ✅
+
+So Python executes:
+    print(record)
+
+
+found = True                    // we found the employee 
+break                           // stop the loop 
+
+
+
+**What happens after the loop?**
+
+if not found:
+    print("Employee ID not found")
+
+
+Since:
+    found = True
+
+then:
+    not found 
+    means not True
+    which is False
+
+Therefore the print("Employee ID not found") doesn't execute.
+
+
+
+> Now suppose the user enters 105
+
+Initially:
+    found = False
+
+The loop checks:
+    101 == 105 → False
+    102 == 105 → False
+    103 == 105 → False
+
+We never execute:
+    found = True
+
+**So after the loop:**
+
+    found = False
+
+Then:
+    if not found:
+
+becomes:
+    if not False:
+
+which is:
+    if True:
+
+Employee ID not found gets printed 
+
+
+
+----------------------------------------
+
+
+
+2. using else
+
+```
+records = [
+  (101, "Alice", 50000),
+  (102, "Bob", 65000),
+  (103, "Charlie", 45000)
+]
+
+
+employee_id = int(input("Enter your employee id: "))
+
+
+for record in records:
+  if record[0] == employee_id:
+      print(record)
+      break
+  
+else:
+  print("No employee ID found")
+
+```
+
+
+> Note
+
+- write else seperately 
+- do not write else just next line to break
+     for eg is user enters 103
+     No employee ID found
+     No employee ID found
+     103, "Charlie", 45000                             // it will check every id and then execute the else statement but that's not we want
+
+
+**Notice where the else is:**
+
+for
+ ├── if
+ │    ├── print
+ │    └── break
+ │
+ └── else
+      └── not found
+
+
+
+**Special Rule**
+
+A for loop's else executes only if the loop finishes normally without hitting break.
+
+User enters  103:
+
+101 → no match
+102 → no match
+103 → match
+     ↓
+   print
+     ↓
+   break
+     ↓
+loop's else is SKIPPED
+
+
+User enters 105:
+
+101 → no match
+102 → no match
+103 → no match
+     ↓
+loop finishes normally
+     ↓
+else executes
+     ↓
+"No employee ID found"
+
+
+
+- break is necessary 
+
+Did the loop hit break?
+       ↓
+   YES → don't execute else
+   NO  → execute else
+
+
+
+------------------------------------
+
+
+
+3. Even better: return from a function
+
+
+In production code, if you're searching inside a function, you can often simply:
+This is often much cleaner because finding the employee is the function's job.
+
+```
+def find_employee(employee_id):
+    for record in records:
+        if record[0] == employee_id:
+            return record
+
+    return None
+
+employee = find_employee(102)
+
+if employee:
+    print(employee)
+else:
+    print("Not found")
+
+```
+
+
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+
+
+
+
+
 

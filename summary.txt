@@ -1,25 +1,5 @@
 
-Part 2-
-9. Type Conversion / Casting 
-10. Sum program 
-11. String methods 
-12. Keywrods 
 
-
-
-Part 3-
- Arithmetic operators
- Comparison operators 
- Logical Operators 
- Condition (if/else)
-
-
-
-part 4- 
-Range 
-while loop 
-for loop 
-break & continue 
 
 
 -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -306,3 +286,82 @@ Before we start `risk_evaluator.py`, these are the concepts I want you to know:
 21. f-strings
 22. `enumerate`
 23. `any`, `all`, `sum`, `min`, `max`
+
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+
+1. Strings
+indexing, slicing
+common methods
+looping through strings
+formatting
+
+2. Functions — deeper practice
+parameters/arguments
+return
+default arguments
+scope
+practical function design
+
+3. List/Dictionary Comprehensions
+very common Python syntax
+useful for data processing and interviews
+
+4. Exception Handling
+try
+except
+else
+finally
+raise
+
+5. File Handling
+reading/writing files
+with open(...)
+practical text/CSV usage
+
+6. Modules & Packages
+import
+standard library
+creating your own modules
+
+7. Object-Oriented Programming
+classes/objects
+__init__
+instance attributes/methods
+inheritance
+when OOP is actually useful
+
+8. Pythonic Tools & Patterns
+enumerate()
+zip()
+sorted()
+lambda
+map() / filter() — enough to understand/use, not overdo
+
+9. Working with Real Data
+JSON
+CSV
+APIs
+basic requests
+
+10. Testing & Debugging
+assertions
+unittest / pytest basics
+debugging strategies
+logging
+
+11. Python + SQL / Data Engineering
+database interaction
+Pandas
+basic ETL concepts
+
+12. Python Interview Problem Solving
+frequency counting
+searching
+two pointers
+sliding window
+stacks/queues
+recursion
+complexity analysis

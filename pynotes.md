@@ -27,7 +27,6 @@
 - 
 
 
-
 -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 
@@ -251,6 +250,7 @@ Dev
 name = input("Enter your name: ")
 
 print("Namaste" , name)
+
 ```
 
 > Input
@@ -444,7 +444,8 @@ print (age + 1)
 ```
 
 
-> Input- Enter your age: 23
+> Input
+Enter your age: 23
 
 > Output
 <class 'int'>
@@ -540,7 +541,7 @@ print(type(age))
 
 
 
-### Easy rule
+#### Easy rule
 
 print(float(age))
 → temporary conversion
@@ -574,6 +575,7 @@ age = input("enter age: ")
 print(float(age) + 1.2)
 
 print(type(age))
+
 ```
 
 > Input
@@ -685,7 +687,7 @@ print (1 + int(2.9999))                        // Type Casting     (explicit)   
 
 # 7-Second-Exercise 
 
-e
+
 Problem stat- Sum Program where a , b are integers nos & we hv to take input and calc the sum of a & b and print it
 
 ```
@@ -693,9 +695,12 @@ a = input("Enter first number: ")
 
 b = input("Enter second number: ")
 
-total = int(a) + int(b)
+total = int(a) + int(b)                                                         
 
-print("the sum is" , total)
+print("the sum is" , total)           
+
+print(type(a))
+print(type(total))
 
 ```
 
@@ -706,6 +711,8 @@ Enter second number: 20
 
 > Output
 the sum is 30 
+<class 'str'>
+<class 'int'>
 
 
 > Alt
@@ -716,10 +723,36 @@ print(total)
 
 
 
+**OR**
+
+
+```
+a = int(input("Enter 1st number: "))
+b = int(input("Enter 2nd number: "))
+
+num_sum = a + b                                     
+
+print("The sum of 2 integers is" , num_sum)
+
+print(type(num_sum))
+print(type(a))
+
+```
+
+> Input
+Enter 1st number: 10
+Enter 2nd number: 20
+
+> Output
+The sum of 2 integers is 30
+<class 'int'>
+<class 'int'>
+
+
+
 
 
 ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-
 
 
 
@@ -735,6 +768,7 @@ print(total)
 
 
 
+
 ### let's understand from code- 
 
 ```
@@ -746,20 +780,21 @@ print (name.upper())
 
 print (name.lower())
 
-print (name)                                         //  the original value is intact 
+print (name)                                              //  the original value is intact 
+
 ```
 
 > Output-
 Sarbesh Mallick
 SARBESH MALLICK
 sarbesh mallick 
-Sarbesh mallick                                      //  the original value is intact cuz strings are immutable 
+Sarbesh Mallick                                          //  the original value is intact cuz strings are immutable 
 
 
 
 
 
---------------------------------------------
+--------------------------------------
 
 
 

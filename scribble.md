@@ -63,3 +63,17 @@ Then unpack it into three variables:
 name, age, profession = person
 
 and print them.
+
+
+
+
+-------------------------------------------------------------------------
+
+
+
+
+
+
+
+
+

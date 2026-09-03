@@ -17,6 +17,11 @@
 - [11. Condition if/else statements](#11-Conditional-statements) 
 - [12. Mini Project Calculator](#12-mini-project-calculator)
 - [13. loops](#13-loops)
+- [Range](#Range)
+- [while loop](#While-Loop)
+- [for loop](#for-loop)
+- [break](#break)
+- [continue](#continue)
 - [14. 4th exercise](#14-Multiple-Exercises)
 - [15. Python Data Structure](#15-Data-Structure)
 - [Lists](#Lists)
@@ -769,6 +774,77 @@ The sum of 2 integers is 30
 
 
 
+### revise
+
+
+1. .upper() and .lower()
+   
+name = "Sarbesh Mallick"
+print(name.upper())
+print(name.lower())
+
+> Output
+SARBESH MALLICK
+sarbesh mallick
+
+
+
+2. find()
+   
+name = "Sarbesh Mallick"
+print(name.find("h"))                                 // only works for one character or substring. Gives result in index or position 
+
+> output
+7 
+  
+
+
+3. replace()
+  
+name = "Sarbesh Mallick"
+print (name.replace("S" , "Z"))
+print (name.replace("Mallick" , "Batman"))
+print (name.replace("Sarbesh Mallick" , "Muthu"))
+print(name.replace("besh" , "M"))
+
+> output
+Zarbesh Mallick
+Sarbesh Batman
+Muthu
+SarM Mallick
+    
+
+
+4. in 
+
+name = "Sarbesh"
+print("b" in name)
+
+> output
+True 
+
+
+number = [10, 20, 30]
+print(40 in number)
+
+> output
+False
+
+
+
+
+5. not in 
+
+number = [10, 20, 30]
+print(40 not in number)
+
+> output
+True 
+
+
+
+
+
 ### let's understand from code- 
 
 ```
@@ -829,13 +905,16 @@ It does not simply return True or False.
 
 
 
+
 ### Code-
 
 ```
 name = "Sarbesh Mallick"
 
-print (name.find('M'))                                               // if that string exists then we will get the index of that thing 
+print (name.find('M'))                                          // if that string exists then we will get the index of that thing
+                                               
 ```
+
 
 > Output-
 8
@@ -852,19 +931,22 @@ if we search something that is not present we will get -1 as value which is inva
 ## replace() method
 
 
-replace() is a string method, not a standalone function.
+- replace() is a string method, not a standalone function.
 
 
 > for eg:
 
+```
 name = "Sarbesh Mallick"
 print(name.replace("Mallick", "Muthu"))
+
+```
 
 > Result:
 Sarbesh Muthu
 
 
-- You call it using .
+- You call it using .replace()
 - variable_name.replace(...)
 - .replace()
 
@@ -978,11 +1060,10 @@ name.replace()
 # 9-Third Exercise
 
 Problem stat-
-<!-- # Problem stat- 
-# Take price of 3 products as input (eg - 99.5, 23.75, 16.15)
-# print the total Bill amount
-# print the average price
-# Take a superhero name as input & check if it starts with 'S' / 's' or not. -->
+Take price of 3 products as input (eg - 99.5, 23.75, 16.15)
+print the total Bill amount
+print the average price
+Take a superhero name as input & check if it starts with 'S' / 's' or not.
 
 
 ```
@@ -1030,8 +1111,14 @@ True
 
 # 10-Operator 
 
+- Arithmetic Operator
+- Comparison Operator
+- Logical Operator 
+
 
 ## Arithmetic Operator 
+
+
 1. **Arithmetic Operators-** 
 
 
@@ -1048,16 +1135,17 @@ True
 
 
 
-print (5 + 3)                                   //  + is addition operator and 5,3 are operands 
-print (5 - 3)
-print (5 * 3)
-print (5 / 3)                                   //   / is division operator 
+print (5 + 3)             8                    //  + is addition operator and 5,3 are operands 
+print (5 - 3)             2 
+print (5 * 3)             15
+print (5 / 3)             1.6667               //   / is division operator 
 
-print (5 // 3)                                 //    is floor division and completely removes the decimal part, only int part is left 
+print (5 // 3)            1                    //    is floor division and completely removes the decimal part, only int part is left 
 
-print (5 % 3)                                  //   % is modulus or remainder , very helpful to check even & odd
+print (5 % 3)             2                     //   % is modulus or remainder , very helpful to check even & odd
 
-print (5 ** 3)                                 //   ** is exponent of or power of 5³   = 5*5*5 = 125 
+print (5 ** 3)            125                   //   ** is exponent of or power of 5³   = 5*5*5 = 125 
+
 
 
 
@@ -1125,7 +1213,8 @@ Result: 21
 
 
 ## Operator comparison 
-2. Operator Comparison 
+
+2. Comparison Operator  
 
 
 
@@ -1189,6 +1278,7 @@ This distinction is extremely important in if statements.
 
 
 ## Logical Operator 
+
 3. Logical Operator 
 
 
@@ -1247,16 +1337,16 @@ not -> (reverses any value)
 
 > example
 
-stt1 = 3 > 5                                      //  False
-stt2 = 3 > 2                                     // True 
+stt1 = 3 > 5                                      // False
+stt2 = 3 > 2                                      // True 
 
 print (stt1 or stt2)                             // Ans True (cuz one statement stt2 is True )
 
-print ((3 > 5) or (3 > 2))                      // we can write directly also 
+print ((3 > 5) or (3 > 2))                       // we can write directly also 
 
 
 
-print ((3 < 5) and  (3 < 12))                   // Ans True (both the statements are true )
+print ((3 < 5) and (3 < 12))                     // Ans True (both the statements are true )
 
 
 
@@ -1399,13 +1489,12 @@ if/else → conditional statement
 # 12-mini-project-calculator
 
 Problem stat- 
-<!-- # Build a calculator that can perform the following operations:
-
-# a + b
-# a - b
-# a * b
-# a % b
-# a ** b -->
+Build a calculator that can perform the following operations:
+a + b
+a - b
+a * b
+a % b
+a ** b 
 
 
 ```
@@ -1473,22 +1562,42 @@ range(start, stop, step)
 range (start=0, stop, step=1)                            // default value if nothing specified. but we have to write a stop value everywhere 
 
 
+1 value -> stop                      // range(5)
+
+2 value -> start & stop              // range(2,6)
+
+3 value -> start,stop,step          // range(2,6,2)
+
+
+
 
 > Example 1- 
 
 num = range(5)                           
 print(num)                                      // 0,1,2,3,4
 
+> output of eg 1
+range(0, 5)
+
+
 
 > Example 2-
 num = range(2, 6)
 print(num)                                    // 2,3,4,5
+
+> output
+range(2, 6)
+
+
 
 
 > Example 3-
 
 num = range(10, 0, -2)
 print(num)                                   // 10, 8, 6, 4 , 2
+
+> output
+range(10, 0, -2)
 
 
 
@@ -1498,11 +1607,14 @@ for i in range(5):
 
 
 
-----------------------------------------------------
+
+
+------------------------------------------------------------------------
 
 
 
 
+## while-loop
 
 ## while loop 
 
@@ -1681,9 +1793,10 @@ while i > 0:
 
 
 
-
+## for-loop
 
 ## for loop 
+
 
 
 
@@ -1872,6 +1985,25 @@ You don't care whether there are 10 users or 10,000 users.
 
 
 
+> test example
+
+```
+tuple = [1, 2, 3]
+
+print(tuple)                                                  // range print hoina but tuple print hoi 
+
+for i in tuple:
+  print(i)
+
+```
+
+> output
+[1, 2, 3]
+1
+2
+3
+
+
 
 
 -------------------------------------------------------------------
@@ -1927,6 +2059,11 @@ print("out of loop")
 18
 out of loop 
 
+
+
+**Trivia-**
+- remember to write break logic before main logic if you want to break before print
+- if u want to print the the breaking number and then after that loop should end then write break after logic i.e after print(i) 
 
 
 
@@ -2274,6 +2411,21 @@ for i in range(1,11):
 
 
 
+
+**OR**
+
+
+```
+for i in range(571):
+
+  if i % 57 == 0:                                          // multiples of 57 
+    print(i)
+
+```
+
+
+
+
 #### refined way 
 
 ```
@@ -2317,6 +2469,7 @@ while i in range(1, 11):
 
 - while expects condition in True or False  unlike for loop but this thing can also work 
 - but in real production code, you would usually use while with a condition that expresses the actual stopping rule rather than i in range(...).
+
 
 
 
@@ -2376,6 +2529,26 @@ for i in range(1,51):
 42
 45
 48
+
+
+
+> in while loop
+
+```
+i = 1
+
+while i <= 50:
+
+  if i == 15:
+    i = i + 1
+    continue 
+
+
+  if i % 3 == 0:
+    print(i)
+  i = i + 1
+
+```
 
 
 
@@ -2439,6 +2612,131 @@ i % a == 0
 
 
 ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+
+
+#### Note loop
+
+**Multiples of 3 — Loop Practice**
+
+Goal: print 3, 6, 9, ... 30
+
+1. Multiplication — Generate multiples
+   
+for i in range(1, 11):
+    print(3 * i)
+
+3 × 1 → 3, 3 × 2 → 6, ... 3 × 10 → 30
+
+
+
+2. % — Find/check multiples
+   
+for i in range(1, 31):
+    if i % 3 == 0:
+        print(i)
+
+i % 3 == 0 → i is exactly divisible by 3.
+
+
+
+3. range() with step — Generate directly
+   
+for i in range(3, 31, 3):
+    print(i)
+
+range(start, stop, step) → 3, 6, 9, ... 30
+
+Important: stop is excluded, so use 31 to include 30.
+
+
+
+4. while + multiplication
+   
+i = 1
+while i <= 10:
+    print(3 * i)
+    i = i + 1
+
+
+5. while + %
+i = 1
+while i <= 30:
+    if i % 3 == 0:
+        print(i)
+    i = i + 1
+
+
+6. while + adding 3
+i = 3
+while i <= 30:
+    print(i)
+    i = i + 3
+
+
+**Quick Logic**
+
+**Approach**	                  **Think**
+3 * i	                 Generate multiples
+i % 3 == 0	             Find/check multiples
+range(3, 31, 3)	         Generate with step
+while + 3 * i	         Generate using while
+while + %	             Find/check using while
+i = i + 3	             Generate by repeatedly adding
+
+
+
+
+**Edge cases**
+range(1, 11)      # 1 to 10
+range(3, 31, 3)   # 3 to 30
+
+- range() excludes the stop value.
+- 0 % 3 == 0 → 0 is technically a multiple of 3.
+- % checks divisibility; it does not generate multiples by itself.
+- For reverse multiples, use a negative step:
+  
+for i in range(30, 0, -3):
+    print(i)
+
+Output:
+
+30
+27
+24
+21
+18
+15
+12
+9
+6
+3
+
+
+**Best 3 to remember:**
+
+# Generate
+for i in range(1, 11):
+    print(3 * i)
+
+# Find/check
+for i in range(1, 31):
+    if i % 3 == 0:
+        print(i)
+
+# Step
+for i in range(3, 31, 3):
+    print(i)
+
+
+
+
+
+
+
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 
 

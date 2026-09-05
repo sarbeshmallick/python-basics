@@ -73,7 +73,68 @@ and print them.
 
 
 
+note- 
 
+NOT vs !=
+
+
+not vs !=
+!= — Not Equal
+
+Compares two values.
+
+x != 5
+
+Means:
+
+Is x not equal to 5?
+
+Examples:
+
+5 != 3      # True
+5 != 5      # False
+not — Logical NOT
+
+Reverses a Boolean result.
+
+not True    # False
+not False   # True
+
+Example:
+
+not (x == 5)
+x == 5 → True
+not True → False
+
+So:
+
+not (x == 5)
+
+is logically equivalent to:
+
+x != 5
+Comparison
+Operator	Meaning	Purpose
+!=	Not equal	Compare two values
+not	Reverse/negate	Reverse a Boolean expression
+Examples
+age != 18
+
+→ age is not 18
+
+not (age >= 18)
+
+→ age >= 18 is false
+
+not True       # False
+not False      # True
+not (5 > 3)    # False
+not (5 == 10)  # True
+⭐ Remember
+not (x == y)   # equivalent result to
+x != y
+
+But not is more general — it can reverse any Boolean expression, while != specifically checks inequality.
 
 
 

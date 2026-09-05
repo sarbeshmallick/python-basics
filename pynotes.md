@@ -28,8 +28,11 @@
 - [Tuple](#Tuple)
 - [Set](#Set)
 - [Dictionary](#Dictionary)
+- [Dictionary_+_List](#Dictionarypluslist)
+- [Dictionary_+_Dictionary](#DictionaryplusDictionary)
 - [16. 5th exercise](#16-Fifth-Exercise)
 - 
+
 
 
 -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -774,7 +777,7 @@ The sum of 2 integers is 30
 
 
 
-### revise
+### Summary 
 
 
 1. .upper() and .lower()
@@ -2754,6 +2757,7 @@ dict = {}
 
 
 
+
 # Lists 
 
 - A list stores multiple values in one variable. 
@@ -2780,6 +2784,215 @@ marks = [99, 90, 50]
     data = [10, "Python", 3.14, True]
 
 - Python allows this, although in production code you'll usually have logically related data in a list.
+
+
+
+
+### Summary 
+
+
+1. len(variable)
+
+print(len(variable))      -> show length 
+
+
+2. index
+print(variable[0])        -> Index 
+
+ 
+
+3. Adding elemets    .append()   
+
+variable.append("xxx")             -> inserting new element but at last position 
+print(variable)
+
+> example 
+names = ["Sarbesh", "Rahul"]
+names.append("Amit")
+print(names)                                // ['Sarbesh', 'Rahul', 'Amit']
+
+
+
+
+4. Adding elements    .insert()
+
+variable.insert(index, "xxx")      -> inserting new element at particular position by writing the index number at left 
+print(variable)
+
+> example 
+names = ["Sarbesh" , "Amit"]
+names.insert(1, "Trilok")
+print(names)                               // ['Sarbesh', 'Trilok', 'Amit']
+
+
+
+
+5. Adding multiple elements   .extend()
+
+variable.extend([50, 60])       
+print(variable)
+
+
+
+
+6.  Removing elements     .remove()  ,  .pop()  ,  .clear()
+
+variable.remove("xxx")             -> removes particular element like for here it is xxx       
+variable.pop()                     -> removes last element unless sepcified 
+variable.pop(index)                -> removes element mentioned in the index 
+variable.clear()                   -> removes whole list 
+
+> example
+names = ["Google", "Micro", "Sarbesh", "Apple", "Meta"]
+names.remove("Meta")
+names.pop(1)
+print(names)                                                                              // ['Google', 'Sarbesh', 'Apple']
+
+
+
+
+7. in  
+
+variable = ["xxx", "yyy", 12]
+
+print("xxx" in variable)                              // True 
+
+store = 13 in variable
+print(store)                                          // False 
+
+
+
+
+8. Looping 
+
+> example 1 
+
+variable = ["Sarbesh", 100, "Google"]
+for i in variable:
+  print(i)      
+
+output-
+Sarbesh
+100
+Google  
+
+
+
+> example 2: range, len method 
+
+variable = ["Sarbesh", 100, "Google"]
+for i in range(len(variable)):
+  print(variable[i])
+
+Output-
+Sarbesh
+100
+Google
+
+
+
+> example 3: use case of range, len method 
+
+variable = [10,20,30,40]
+
+for i in range(len(variable)):
+  variable[i] = variable[i] * 2
+  print(variable[i])
+
+output-
+20
+40
+60
+80
+
+
+
+> example 4: another usecase of range, len method
+
+variable = [10, 20, 30, 40]
+
+for i in range(len(variable)):
+  print("Index of", i, "is", variable[i])
+
+
+output-
+Index of 0 is 10
+Index of 1 is 20
+Index of 2 is 30
+Index of 3 is 40
+
+
+
+> example 5: 
+
+variable = [10, 20, "Sarbesh", 30]
+
+for i in range(len(variable)):
+  print("Index of", i, "is", variable[i])
+
+
+output- 
+Index of 0 is 10
+Index of 1 is 20
+Index of 2 is Sarbesh
+Index of 3 is 30
+
+
+
+
+
+9. Slicing 
+
+- start is included but stop is excluded 
+
+variable[start:stop]                     -> structure 
+variable[start:stop:update]
+
+print(variable[start:stop])              -> printing the sliced part 
+
+
+print(variable[:3])                      -> from 0 index (start) to index 2 
+
+print(variable[3:])                      -> from 3rd index till last index 
+
+print(variable[0:5:2])                   -> adding a step value 
+
+variable([:])                         -> print the whole list 
+
+varaible([::2])                       -> print every 2nd element 
+
+variable(::-1)                        -> reverses a list 
+
+
+> example
+numbers = [10, 20, 30, 40, 50]
+print(numbers[0:5:2])
+
+output-
+[10, 30, 50]
+
+
+
+
+10. Reversing a list 
+
+variable.reverse()                                 // modifies the original list 
+print(variable)
+
+
+variable(::-1)                                    // returns new list, original list unmodified 
+
+
+numbers = [10, 20, 30, 40, 50]
+for i in range(len(numbers) - 1, -1, -1):                   // range(4, -1, -1)
+    print(numbers[i])
+
+
+
+
+-------------------------------------------------------------
+
+
 
 
 
@@ -2815,8 +3028,8 @@ Sarbesh
 - Python, like C++, uses zero-based indexing.
 
 - Index:   0          1        2
-        ↓           ↓        ↓
-      Sarbesh     Rahul     Amit
+           ↓          ↓        ↓
+        Sarbesh     Rahul     Amit
 
 
 names[0]    //  Sarbesh
@@ -2858,13 +3071,17 @@ names[-2]  # second last        // Rahul
 Lists are mutable, meaning their elements can be added, removed or changed.
 
 
+![alt text](assets/image2.png)
+![alt text](assets/image3.png)
+
+
+
 >>> example 4
 
 marks = [98, 97, 95]
 marks[0] = 100
 
 print(marks)
-
 
 > Output:
 [100, 97, 95]
@@ -2876,7 +3093,6 @@ marks = [85, 72, 91]
 marks[1] = 80
 
 print(marks)
-
 
 > Output:
 [85, 80, 91]
@@ -3059,6 +3275,15 @@ print(list(num))
 
 
 
+> code:
+num = range(5)
+num = list(num)                                                          // permanently reassigned num from range to list 
+print(num)
+
+> output
+[0, 1, 2, 3, 4]
+
+
 
 -----------------------------------------------------
 
@@ -3168,7 +3393,7 @@ for i in range(len(numbers)):
 
 - 1st,  len(numbers) gives 4
 - 2nd,  range(4) gives 0 1 2 3 
-- 
+  
 
 So, the loop does:
 i = 0 → numbers[0] → 10
@@ -3260,6 +3485,26 @@ Output->
 0 10
 1 20
 2 30
+
+
+
+
+
+>>> example
+
+```
+variable = [10, 20, "Sarbesh", 30]
+
+for i in range(len(variable)):
+  print("Index of", i, "is", variable[i])
+
+```
+
+> output
+Index of 0 is 10
+Index of 1 is 20
+Index of 2 is Sarbesh
+Index of 3 is 30
 
 
 
@@ -3373,7 +3618,7 @@ print(numbers[2:])
 
 3. **So,**
 
-numbers[:3]   # beginning → index 3
+numbers[:3]   # beginning → index 2
 numbers[2:]   # index 2   →  end
 
 
@@ -3386,13 +3631,21 @@ list[start:stop:step]
 
 > Eg
 numbers = [10, 20, 30, 40, 50]
-numbers[0:5:2]
+print(numbers[0:5:2])
 
 Start at 0, stop before 5, jump by 2:
 
 
 > Output
 [10, 30, 50]
+
+
+#### Trivia
+print(numbers[0:5:2])                                // [10, 30, 50]     
+print(numbers[0:8:2])                                // [10, 30, 50]
+
+- here stoping number is not mandatory so both the output is coming same although last index is 4. so stoping number here is the boundary
+
 
 
 
@@ -3404,6 +3657,38 @@ numbers[::-1]
 
 > Output
 [50, 40, 30, 20, 10]
+
+
+
+6. **printing every nth element: here for eg every 2nd element**
+
+numbers = [10, 20, 30, 40, 50]
+print(numbers[::2])
+
+> output
+[10, 30, 50]
+
+
+> concept 
+
+[start : stop : step]
+
+[::2]
+ ↑ ↑ ↑
+ | | └── step = 2
+ | └──── stop = omitted
+ └────── start = omitted
+
+- Start from the beginning, go to the end, and take every 2nd element.
+
+
+
+7. 
+   
+variable[::2]    ->  technically it selects elements at even indexes
+numbers[1::2]    ->  selects elements at odd indexes
+
+
 
 
 
@@ -3426,10 +3711,29 @@ numbers[::-1]
 
 
 
+
+#### Reversing a list ways 
+
+1. variable(::-1) 
+   
+
+2. variable.reverse()                          
+   print(variable) 
+   
+
+3. numbers = [10, 20, 30, 40, 50]
+   for i in range(len(numbers) - 1, -1, -1):                          // range(4, -1, -1)
+     print(numbers[i])                      
+
+
+
+
+
 #### Helpful in interview / prod 
 
 first_three = numbers[:3]
 last_three = numbers[-3:]
+
 
 
 
@@ -3451,6 +3755,8 @@ last_three = numbers[-3:]
 - we use Tuple, when we want fixed values and not something changeable like GPS coordinates 
 
 
+
+
 >>> Example 1
 
 numbers = (10, 20, 30, 40)
@@ -3458,6 +3764,10 @@ print(numbers)
 
 > Output
 (10, 20, 30, 40)
+
+
+
+### Summary 
 
 
 
@@ -3519,7 +3829,7 @@ for number in numbers:
 
 
 
->>> Example 1
+>>> Example 1: Counts how many times a value appears
 
 numbers = (10, 20, 20, 30)
 print(numbers.count(20))
@@ -3530,13 +3840,14 @@ print(numbers.count(20))
 
 
 
->>> Example 2
+>>> Example 2: Returns the index of the first occurrence of a value
 
-numbers = (10, 20, 20, 30)
+numbers = (10, 20, 20, 30, 30)
 print(numbers.index(30))
 
 > Output
 3
+
 
 
 
@@ -3558,6 +3869,8 @@ working with database/query results
 unpacking values
 
 
+**Tuple Unpacking code-**
+
 ```
 person = ("Sarbesh", 24)
 
@@ -3573,7 +3886,7 @@ Sarbesh
 24
 
 - Here the tuple contains two related values, and Python unpacks them into two variables.
-
+- but remember no of variables should match no of values 
 
 
 
@@ -3594,6 +3907,53 @@ Sarbesh
 - Sets are unordered, so their display order is not guaranteed. 
 - They also do not support indexing.
 - looping is allowed 
+
+
+### Summary 
+
+1. No element access like   variable[0]
+
+2. looping over a set can be done but it is not ordered so be careful 
+   
+   
+3. Adding elements --- .add()                                                     // which is .append() in lists 
+
+variable.add("xxx")
+print(variable)
+
+
+
+4. Adding multiple elements --- .update()                                         // which is .extend() in lists 
+
+variable.update([20, 30, "yyy"])
+
+
+
+5. Removing elements ---   .remove()  ,  .discard()
+
+variable = {10,20,30,20}
+variable.remove(20)
+print(variable)
+
+> Output
+{10, 30}
+
+
+- .remove() checks element exists or not before removing but .discard() dosen't checks . So .discard() dosen't throw any error if requested element dosen't exists 
+
+
+
+
+6. Set Operations
+   
+   1. Union                    (A | B)             // All Unique elemnets in both the sets 
+   2. Intersection             (A & B)             // Elements present in both the sets get printed 
+   3. Difference               (A - B)             // Last set that is B is the base where experimentation happens & the elements present in Higher Set A but not in B gets printed 
+
+
+
+
+---------------------------------------------
 
 
 
@@ -3690,7 +4050,7 @@ nothing changes cuz no duplicates in sets
 
 >>>> example 3 
 
-numbers = {10, 20, 30}
+numbers = {10, 20, 30, 20}
 numbers.remove(20)
 print(numbers)
 
@@ -3714,9 +4074,10 @@ print(numbers)
 
 
 
+
 #### Set Operations 
 
-
+1. Union 
 >>> Example 5: Union
 
 A = {1, 2, 3, 4}
@@ -3729,6 +4090,8 @@ print(A | B)                              // Union (|) - Values present in eithe
 
 
 
+
+2. Intersection 
 >>> Example 6: Intersection 
 
 A = {1, 2, 3, 4}
@@ -3741,6 +4104,8 @@ print(A & B)                            // Intersection (&) - Values present in 
 
 
 
+
+3. Difference 
 >>> Example 7: Difference 
 
 A = {1, 2, 3, 4}
@@ -3750,6 +4115,11 @@ print(A - B)                            // Difference (-)  - What does A have th
 
 > Output
 {1, 2}
+
+
+- A holo supreme and B holo base. A te jeigulo ache but B te nei seigulo list kora hbe 
+
+
 
 
 
@@ -3796,10 +4166,11 @@ print(unique_set)
 - it is set()
 - {}   ->   Dictionary 
 
-Dictionary:
+Empty Dictionary:
 x = {}    
 
-Set:
+
+Empty Set:
 x = set()
 
 
@@ -3834,12 +4205,227 @@ for value in numbers:
 
 
 - A dictionary is a set of key value & pairs
-- key & its pair is denoted by :    like key : pair
+- key & its pair is denoted by   :    
+-  key : pair
 - key and its pair is sperated from another key and its pair by comma , 
 - key1 : pair1 , key2 : pair 2
 - we create dict by {} 
 - syntax- {}
 - dictonaries are mutable just like lists and sets 
+
+
+
+
+### Summary 
+
+1. What is index in list is key in dictionary 
+   
+   
+2. Accessing elements 
+   
+person = {
+    "name": "Sarbesh",
+    "age": 24,
+    "role": "Developer"
+}
+
+print(person["name"])                                                      // Sarbesh 
+
+
+
+
+
+3. Dictionaries are mutable and we can add a key:value pair or can update a key:value pair.  We don't need .add() or .append() to add elements. 
+
+person = {
+    "name": "Sarbesh",
+    "age": 24,
+    "role": "Developer"
+}
+
+person = {
+    "name": "Sarbesh",
+    "age": 24,
+    "role": "Developer"
+}
+
+person["age"] = 25
+person["city"] = "Bengaluru"
+
+print(person)
+
+
+> output
+{'name': 'Sarbesh', 'age': 25, 'role': 'Developer', 'city': 'Bengaluru'}
+
+
+
+
+4. Removing elements - .pop()  ,  del 
+
+person = {
+    "name": "Sarbesh",
+    "age": 24,
+    "role": "Dev"
+}
+
+person.pop("age")
+del person ["role"]
+
+print(person)
+
+> Output
+{'name': 'Sarbesh'}
+
+
+
+
+5. checking 
+    
+
+    1. in method 
+
+person = {
+    "name": "Sarbesh",
+    "age": 24,
+    "role": "Developer"
+}
+
+print("age" in person)
+print("city" in person)
+
+> output
+True
+False
+
+
+
+  2. if  : checks both keys and values 
+
+person = {
+    "name": "Sarbesh",
+    "age": 24,
+    "role": "Developer"
+}
+
+if "age" in person:
+  print(person["age"])
+
+
+> output
+24
+
+
+
+
+
+6. .get() method
+   
+variable.get("key")    -> structure 
+
+
+person = {
+    "name": "Sarbesh",
+    "age": 24
+}
+
+print(person.get("email"))                                                  // very simple, if key dosen't exists then None is returned 
+
+print(person.get("city", "Not Provided"))                                  // a good response i.e Not provided is given as output if no key exists 
+
+print(person.get("name", "Not Provided"))                                  // here the key exists so it printed it value 
+
+
+> output
+None
+Not Provided
+Sarbesh
+
+
+
+
+
+7. Looping 
+
+- Iteration is over Keys and not indexes 
+  
+
+1. Looping over Keys only 
+   
+person = {
+    "name": "Sarbesh",
+    "age": 24
+}
+
+for key in person:
+  print(key)
+
+> Output
+name
+age
+
+
+- we can replace the key keyword with anything like xxx or value or i 
+- and then also it will iterate over key 
+
+person = {
+    "name": "Sarbesh",
+    "age": 24
+}
+for i in person:
+  print(i)
+  
+> output
+name 
+age 
+
+
+
+
+2. Looping over Keys & Values both 
+
+person = {
+    "name": "Sarbesh",
+    "age": 24
+}
+
+for key in person:
+  print(key, person[key])
+
+
+> output
+name Sarbesh
+age 24
+
+
+**OR**
+
+person = {
+    "name": "Sarbesh",
+    "age": 24
+}
+
+for key, value in person.items():
+  print(key, value)
+
+
+
+
+3. Looping over values only 
+
+person = {
+    "name": "Sarbesh",
+    "age": 24
+}
+
+for value in person.values():
+  print(value)
+
+
+> output
+Sarbesh
+24
+
 
 
 
@@ -3866,6 +4452,8 @@ now u need to remember:
 
 
 - A dictionary lets us associate a key with a value
+  
+
 
 **Using dict:**
 
@@ -3890,6 +4478,7 @@ print(person)
 
 
 **So**
+
 List:
 index → value
 
@@ -4254,7 +4843,7 @@ age 24
 -----------------------------------------------------------------
 
 
-
+## Dictionarypluslist 
 
 #### Dictionary + Lists 
 
@@ -4370,6 +4959,7 @@ print(users)
 ----------------------------------------------------------------------
 
 
+## DictionaryplusDictionary 
 
 
 #### Dictionary + Dictionary 

@@ -31,8 +31,11 @@
 - [Dictionary_+_List](#Dictionarypluslist)
 - [Dictionary_+_Dictionary](#DictionaryplusDictionary)
 - [16. 5th exercise](#16-Fifth-Exercise)
+- [17. Functions](#Functions)
+- [Module Functions](#Module-Functions)
+- [18. Exception Handling](#Exception-Handling)
+- [19. File Handling](#File-Handling)
 - 
-
 
 
 -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -2796,14 +2799,14 @@ marks = [99, 90, 50]
 print(len(variable))      -> show length 
 
 
-2. index
+2. Access elements index
 print(variable[0])        -> Index 
 
  
 
 3. Adding elemets    .append()   
 
-variable.append("xxx")             -> inserting new element but at last position 
+variable.append("xxx")             -> inserting new element but at last position       & in set .add() is used 
 print(variable)
 
 > example 
@@ -2829,7 +2832,7 @@ print(names)                               // ['Sarbesh', 'Trilok', 'Amit']
 
 5. Adding multiple elements   .extend()
 
-variable.extend([50, 60])       
+variable.extend([50, 60])                          -> inserting multiple elements at once and in set .update() is used 
 print(variable)
 
 
@@ -5093,7 +5096,14 @@ DICTIONARY
 - Tuple is faster 
 
 
+
+
+
+
+
 ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
 
 
 
@@ -5157,10 +5167,10 @@ unique roll numbers {101, 102, 105, 108, 110}
 records
    ↓
 ┌─────────────────────────────┐
-│ (101, "Alice", 50000)       │  ← tuple 1
-│ (102, "Bob", 65000)         │  ← tuple 2
-│ (103, "Charlie", 45000)     │  ← tuple 3 
-└─────────────────────────────┘
+│ (101, "Alice", 50000)       │  ← tuple 1,      index 0 or records[0] for records 
+│ (102, "Bob", 65000)         │  ← tuple 2       index 1 or records[1] for records 
+│ (103, "Charlie", 45000)     │  ← tuple 3       index 2 or records[2] for records 
+└─────────────────────────────┘ 
 
 
 2.  Each tuple represents one employee.
@@ -5169,6 +5179,7 @@ And inside each tuple:
 (101, "Alice", 50000)
   ↑       ↑       ↑
   ID     Name   Salary
+index[0]
 
 
 3. Records is our entire list. The loop takes one element from the list at a time and puts it into the variable record.
@@ -5219,6 +5230,16 @@ Tuples use indexes just like lists:
  record[0] -> Give me the value at index 0 of this tuple. -> 101
  record[1] -> "Alice"
  record[2] -> 50000
+
+
+1st iteration:
+record[0] = 101
+
+2nd iteration:
+record[1] = 102
+
+3rd iteration:
+record[2] = 103
 
 
 
@@ -5292,6 +5313,10 @@ STOP
 
 Output:
 (102, "Bob", 65000)
+
+
+![alt text](assets/image4.png)
+
 
 
 
@@ -5434,6 +5459,20 @@ Employee ID not found gets printed
 
 
 
+**There are only two possible final states:**
+
+Match occurs:
+found = False → True
+if not True → False
+→ don't print "Not found"
+
+No match:
+found remains False
+if not False → True
+→ print "Not found"
+
+
+
 ----------------------------------------
 
 
@@ -5553,7 +5592,1005 @@ else:
 
 
 
+
+
+
+
 --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+
+
+
+
+
+
+
+# Functions 
+
+
+
+- A function is a reusable block of code that performs a particular task.
+
+- There are 3 types of function-
+  1. User Defined functions 
+  2. Built-in functions 
+  3. Module Functions 
+
+
+
+1. **User defined function** 
+
+Suppose you have to caluclate gst everytime on new different prices and the gst calc formula is same for every item. So, just make gst calculation as a function 
+
+- A function is created using the def keyword 
+  
+
+>>> example 
+
+```
+def add_gst(price):
+  new_price = price + (0.18 * price)
+  print(new_price)
+
+add_gst(100)                                                      # 118.0
+add_gst(200)                                                      # 236.0
+
+```
+
+
+**OR** 
+
+
+```
+def add_gst(price):
+  print(price + 0.18 * price)
+
+```
+
+
+
+#### Parameter & Arguments 
+
+price -> parameter 
+
+add_gst(100) -> (100) is argument 
+
+
+
+
+
+#### Returning Function 
+
+A returned value can be stored or used in another calculation:
+
+>>> Example: GST using returning function
+
+```
+def add_gst(price):
+  price = price + (0.18 * price)
+  return price
+
+print(add_gst(100))                                           // in returning functions just by calling the function we will not get output, we have to use print() 
+
+new = add_gst(112)
+
+print(new)
+
+```
+
+
+
+
+>>> Example: Squares Using Returning functions 
+
+def square(number):
+    return number * number
+
+print(square(5))
+print(square(10))
+print(square(7))
+
+
+> output
+25
+100
+49
+
+
+> Syntax breakdown:
+
+def        → tells Python we're defining a function
+square     → function name
+(number)   → parameter
+:          → start of function body
+return     → sends a result back
+
+
+
+
+>>> Example: cretaing a function where sum is calculated 
+
+```
+def add(a, b):
+  return a + b
+
+
+print(add(10,20))
+
+
+store = add(100,200)
+store = store * 2
+print(store)
+
+
+new = store % 2
+print(new)
+
+
+another = add(200, 200) * 2 + 100
+print(another)
+
+
+print(add(10,20) + 10)
+
+```
+
+> output
+30
+600
+0
+900
+40
+
+
+
+
+
+
+#### Note-
+print() sends information to the screen.
+return sends a value back to the code that called the function.
+
+
+
+
+
+
+#### Function with no parameters 
+
+def greet():
+  print("Welcome")
+
+greet()
+
+> output
+welcome 
+
+
+
+
+#### Default parameters 
+
+- Sometimes you want a function parameter to have a default value if the caller doesn't provide one.
+
+```
+def greet(name, message="Hello"):
+    print(message, name)
+
+greet("Sarbesh")
+greet("Anu", "Good Morning")
+
+```
+
+> output
+Hello Sarbesh
+Good Morning Anu 
+
+
+> Mental model
+
+def greet(name, message="Hello"):
+
+name              → required parameter
+message="Hello"   → optional parameter with default value
+
+Required parameters must come before default parameters   like   def greet(name, message="Hello"):
+
+
+
+
+>>> 2nd example 
+
+probelm stat- the default tax percent is 10 but if user can enter dynamic rate to know final prices
+
+```
+def calculate_price(price, tax=10):
+  gst = price + (price * tax/100)
+  return gst 
+
+print(calculate_price(100))
+
+print(calculate_price(100, 20))
+
+```
+
+> output
+110
+120 
+
+
+
+
+#### Function arguments: resusable 
+
+probelm stat- Create a function introduce(name, age) that accepts a person's name and age, and returns a formatted introduction containing both pieces of information.
+
+```
+def introduce(name, age):
+  return (f"My name is {name} and I am {age} years old")
+
+print(introduce("Sarbesh", 24))
+
+```
+
+> Output
+My name is Sarbesh and I am 24 years old 
+
+
+> note
+
+f → f-string
+{name} and {age} → placeholders for variables
+
+
+f is a formatted string. Evaluate anything inside {} and put its value here.
+f"....."
+means formatted string.
+
+![alt text](assets/image5.png)
+
+
+
+
+
+
+#### Return multiple values: but using reusable function arguments  
+
+Problem stat- 
+Exercise: Return Multiple Values
+
+Write a function called calculate(a, b) that:
+Calculates the sum of a and b.
+Calculates the difference (a - b).
+Returns both results from the function.
+Then store the returned values in two separate variables and print them.
+
+```
+def calculate(a, b):
+  return (f"The sum of 2 numbers is {a + b} and difference is {a-b}")
+    
+print(calculate(20, 8))
+
+```
+
+
+
+#### List comprehensions 
+
+- List comprehensions are just a shorter way of writing a for loop that creates a list.
+
+
+>>> Example: Squaring each element 
+
+- We can do this without list comprehensions but it will just print it without storing result into a new list 
+
+```
+numbers = [1, 2, 3, 4, 5]
+
+for number in numbers:
+    number = number * number
+    print(number)
+```
+
+> output
+1
+4
+9
+16
+25
+
+
+- But we wanted to create a new list containing all the squares
+
+```
+numbers = [1,2,3,4,5]
+
+squares = []
+
+for number in numbers:
+  squares.append(number * number)
+
+print(squares)
+
+```
+
+> Output
+[1, 4, 9, 16, 25]
+
+
+
+
+
+>>> ANother example using double
+- Identation matters so much in python 
+
+```
+numbers = [1, 2, 3, 4, 5]
+
+double = []
+
+for i in numbers:
+  double.append(i * 2)
+
+print(i)
+
+print(double)
+
+```
+
+> output
+5
+[2, 4, 6, 8, 10]
+
+
+
+
+>>> now I want to show you if you write print statements inside the loop then at each loop it will print before reaching final element 
+
+```
+numbers = [1, 2, 3, 4, 5]
+
+double = []
+
+for i in numbers:
+  double.append(i * 2)
+  print(double)
+```
+
+> output
+[2]
+[2, 4]
+[2, 4, 6]
+[2, 4, 6, 8]
+[2, 4, 6, 8, 10]
+
+
+```
+numbers = [1, 2, 3, 4, 5]
+
+double = []
+
+for i in numbers:
+  double.append(i * 2)
+  print(i)
+```
+
+> output
+1
+2
+3
+4
+5
+
+
+
+ 
+#### practise problem
+
+probelm stat- Given a list of numbers, create a new list containing only the even numbers using a list comprehension.
+
+```
+numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]                                        // Alt-    numbers = range(1,11)
+
+even_number = []
+
+for number in numbers:
+  if number % 2 == 0:
+    even_number.append(number)
+
+print(even_number)
+
+```
+
+> output
+[2, 4, 6, 8, 10]
+
+
+
+
+
+
+
+--------------------------------------------------------
+
+
+
+
+2. **Built-in Functions**
+
+Built-in functions are available directly in Python and do not require an import.
+
+numbers = [1, 2, 3, 4, 5]
+
+print(len(numbers))                                              # 5
+print(max(numbers))                                              # 5
+print(min(numbers))                                              # 1
+print(sum(numbers))                                              # 15
+
+
+input() , print(), int(), float(), str() all are Built in functions 
+
+
+
+
+
+-------------------------------------------------------
+
+
+
+
+## Module-Functions 
+
+
+3. **Module functions** 
+
+A module is a file containing useful functions and other Python code.
+
+Python's  math module provides mathematical functions
+Importing an entire module- 
+
+```
+import math
+print(math.sqrt(16))                                  //  4.0
+print(math.log2(64))                                 //  6.0
+
+```
+
+When the complete module is imported, use the module name before its function- 
+math.sqrt(16)
+
+
+
+
+#### Importing selected functions- 
+
+```
+from math import sqrt, log2
+print(sqrt(16))                                          # 4.0
+print(log2(64))                                          # 6.0
+
+```
+
+
+
+#### another module is random
+
+```
+import random 
+print(random.random())                      // 0 to 1 where 1 is excluded and every time a new number gets generated 
+```
+
+```
+import random 
+print(random.randint(1, 10))                // from range 1 to 10 a random number will get generated and where 1 & 10 both are included 
+
+```
+
+
+
+
+#### Viewing the contents of a module-
+
+dir() displays the names available inside a module:
+
+import math
+print(dir(math))
+
+
+
+
+
+
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+
+
+
+# Exception-Handling 
+
+
+
+### Situation 
+
+Imagine a situation where user enters a string instead of integers 
+
+age = int(input("Enter age: "))
+and user enters abc 
+Python crashes with a ValueError
+
+
+**Exception handling lets us handle that error instead of letting the program terminate.**
+
+
+
+> Basic structure 
+
+try:
+    age = int(input("Enter age: "))
+except ValueError:
+    print("Please enter a valid number.")
+
+
+
+> Mnetal Model 
+
+try
+    → attempt this code
+
+except
+    → if a specific error happens, handle it here
+
+
+
+
+### Problem Exercise 
+
+Write a program that asks the user to enter a number and prints: 
+You entered: 25 
+if the input is valid.
+
+If they enter something like: hello
+it should print:
+Invalid input. Please enter a number.
+
+
+```
+try:
+  number = int(input("Please enter a number: "))                                   
+  print("You entered:", number)                                                        // Alt-    print(f"You entered: {number}")
+
+except ValueError:
+  print("Invalid input. Please enter a number")
+
+```
+
+> Input
+Please enter a number: 23
+
+> Output
+You entered: 23
+
+
+
+
+**Trvia-**
+
+Remember whenever Error is rasied and Expect is triggered then python doesn't continue executing the remaining lines inside try.
+
+
+
+
+### Problem Exercise- Multiple except to catch multiple errors
+
+Probelem stat-
+Asks the user for two numbers.
+Divides the first number by the second.
+Handles:
+non-numeric input with ValueError
+division by zero with ZeroDivisionError
+
+
+```
+try:
+  a = int(input("Enter first number: "))
+  b = int(input("Enter second number: "))
+  result = a/b
+  print(result)
+
+
+except ValueError:
+  print("Enter a valid number")
+
+
+except ZeroDivisionError:
+  print("Cannot divide by zero")
+
+```
+
+
+
+
+
+## else and finally 
+
+
+else     ->  else runs only when the try block succeeds without an exception.
+finally  ->  Run this code no matter whether an exception happened or not.
+
+
+```
+try:
+    number = int(input("Enter a number: "))
+    print(number)
+
+except ValueError:
+    print("Invalid input")
+
+finally:
+    print("Program finished")
+
+```
+
+
+> See
+
+If input is valid:
+
+Enter a number: 10
+Program finished
+
+
+
+If input is invalid:
+
+Enter a number: abc
+Invalid input
+Program finished
+
+
+- The finally block runs in both cases.
+
+
+
+
+
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+
+
+
+
+
+# File-Handling 
+
+
+So far, our programs mostly work with data that exists while the program is running:
+Once the program ends, that data is gone. 
+A file lets us store data permanently so another program run can access it later.
+
+
+Programs often need to read from and write to files:
+1. logs
+2. configuration
+3. CSV/text data (.csv or .txt)
+4. reports
+5. saved application data
+
+
+- Python's basic mechanism is open()
+
+
+
+>>> example: to read a file
+
+file = open("data.txt", "r")
+
+content = file.read()
+print(content)
+
+file.close()
+
+
+
+> The important pieces:
+
+open()       → opens the file
+"data.txt"   → file name , file we want to access
+"r"          → read mode
+file         → variable referring to the opened file
+.read()      → reads the contents
+.close()     → closes the file
+
+
+**Basic flow-**
+open → read/write → close
+
+
+
+
+- However, in modern Python, we normally use a with statement so Python handles closing the file automatically 
+
+>>> modern example using with 
+
+with open("data.txt", "r") as file:
+    content = file.read()
+
+print(content)
+
+
+
+
+
+
+**Traditional method-**
+
+file = open("data.txt", "r")
+content = file.read()
+print(content)
+file.close()
+
+
+
+**with method-**
+
+with open("data.txt", "r") as file:
+    content = file.read()
+
+print(content)
+
+
+- Python automatically handles closing the file when you're finished with the with block.
+
+
+
+
+
+### Problem Exercise
+
+1. Prblm stat- 
+create a filed called numbers.txt. Put some numbers in it like 10,20,...,50
+Then write Python code that opens the file and prints its contents.
+
+
+
+>>> 1. Problem statement 
+
+Created a file called numbers.txt where I stored 10, 20, 30, 40, 50 
+
+Then created a python file where I wrote the logic to read its contents. So it is   File -> Python 
+
+```
+with open("numbers.txt", "r") as file:
+
+  content = file.read()
+  print(content)
+
+```
+
+> output
+10, 20, 30, 40, 50 
+
+
+
+
+
+#### converting raw data into list 
+
+- .read() gives you raw data and usually the output is in string format. We can convert string into List and later integers 
+
+```
+with open("numbers.txt", "r") as file:
+    content = file.read()
+
+numbers = content.split(",")
+print(numbers)
+
+```
+
+> output
+['10', ' 20', ' 30', ' 40', ' 50']
+
+
+- Now we have a list, but they're still strings. We can convert it into strings 
+
+
+
+
+
+#### Converting raw data -> list -> Integer 
+
+
+```
+with open("numbers.txt", "r") as file:
+  content = file.read()
+
+numbers = []
+
+for number in content.split(","):
+  numbers.append(int(number))
+
+
+print(numbers)
+print(sum(numbers))
+
+```
+
+> Output
+[10, 20, 30, 40, 50]
+150
+
+
+
+
+> Alt
+
+with open("numbers.txt", "r") as file:
+  content = file.read()
+
+numbers = []
+
+values = content.split(",")
+
+for number in values:
+    numbers.append(int(number))
+
+
+
+
+> shortend version
+numbers = [int(number) for number in content.split(",")]
+
+
+
+
+-----------------------------------------------------------
+
+
+
+
+We did File -> Python
+
+now,  Python -> File 
+
+
+**Writing with "w"**
+
+
+>>> example
+
+```
+with open("output.txt", "w") as file:
+    file.write("Hello Python")
+
+```
+
+- This creates output.txt if it doesn't exist.
+- If it already exists, "w" overwrites its existing contents.
+
+
+- we  can write multiple lines using \n
+
+```
+with open("output.txt", "w") as file:
+    file.write("Python\n")
+    file.write("Java\n")
+    file.write("C++\n")
+```
+
+The file will contain:
+Python
+Java
+C++
+
+
+
+>>> Practise Exercise
+
+Prblm stat-
+Create output.txt and write:
+Apple
+Banana
+Orange
+Mango
+using with open() and "w".
+
+
+here python -> File 
+so my end result is a file named output.txt where my result will get stored 
+
+```
+with open("output.txt", "w") as file:
+
+  file.write("Apple\n")
+  file.write("Banana\n")
+  file.write("Orange\n")
+  file.write("Mango\n")
+
+```
+
+> output
+in a new file output.txt 
+
+
+
+
+
+**Mode**	  **Meaning**
+"r"	            Read
+"w"	        Write / overwrite
+"a"	           Append
+
+
+
+>>> Follow up exercise: Append (Update exisiting content)
+
+Prblm stat-
+Using your existing output.txt, write Python code that adds:
+Pineapple
+Watermelon
+to the end of the file without deleting Apple, Banana, Orange and Mango.
+
+
+```
+with open("output.txt", "a") as file:
+  file.write("Pineapple\n")
+  file.write("Watermelon\n")
+
+```
+
+
+
+
+## One more useful file concept: reading line-by-line
+
+Since files often contain many lines, you don't always want to load the entire file with: 
+content = file.read()
+
+
+You can iterate over the file directly:
+
+```
+with open("output.txt", "r") as file:
+    for line in file:
+        print(line)
+
+```
+
+- but new line character \n produces extra spacing. So we need to strip it down 
+
+
+```
+with open("output.txt", "r") as file:
+    for line in file:
+        print(line.strip())
+
+```
+
+
+
+- we don't need for loop always to print indivual components as .read() already gives you the entire file as one string & .strip() removes spacing 
+
+```
+with open("output.txt", "r") as file:
+
+  content = file.read()
+  print(content.strip())
+
+```
+
+
+
+
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+
 
 
 
